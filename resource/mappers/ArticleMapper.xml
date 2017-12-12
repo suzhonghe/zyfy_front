@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.ArticleDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.Article" id="rm">
+		<id column="ID" property="id"/>
+		<result column="COLUMNID" property="columnId"/>
+		<result column="COLUMNNAME" property="columnName"/>
+		<result column="TITLE" property="title"/>
+		<result column="AUTHOR" property="author"/>
+		<result column="SOURCE" property="source"/>
+		<result column="SOURCELINK" property="sourceLink"/>
+		<result column="CONTENT" property="content"/>
+		<result column="SUBMITTIME" property="submitTime"/>
+		<result column="INDEX" property="index"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select ID id,COLUMNID columnId,COLUMNNAME columnName,TITLE title,AUTHOR author,SOURCE source,
+			SOURCELINK sourceLink,CONTENT content,SUBMITTIME submitTime,`INDEX` `index` from TB_ARTICLE where 1=1
+	</sql>
+	<select id="selectByParams" parameterType="com.zhongyang.java.system.page.Page" resultMap="rm">
+		<include refid="sqlfile"/>
+		<if test="params.containsKey('columnId')and params.columnId !=null and params.columnId !=''" >
+		and COLUMNID = #{params.columnId}
+		order by `INDEX`, SUBMITTIME desc
+		</if>
+		<if test="params.containsKey('PTGG') and params.PTGG !=''" >
+			and COLUMNID not in(#{params.PTGG})
+			order by SUBMITTIME DESC
+		</if>
+		
+	</select>
+	
+	<select id="getArticleById" resultMap="rm">
+	 select * from TB_ARTICLE where ID=#{id}
+	</select>
+	
+	<select id="getBeforAndAfter" resultMap="rm">
+	<include refid="sqlfile"/>
+	 and COLUMNID = #{columnId}
+	 and (`INDEX` =#{preIndex} or `INDEX`=#{surIndex}) order by `INDEX`
+	</select>
+</mapper>

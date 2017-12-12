@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="author" content ="中阳财富"/>
+<meta name="keywords" content="中阳财富,左右逢园,中阳财富官网,互联网金融,P2P网贷,投资理财,P2P理财,互联网理财,网络贷款,小额贷款,100%本息保障,zhongyangcf.com">
+<meta name="description" content="中阳财富 www.zhongyangcf.com - 国内最规范的互联网金融P2P网贷平台之一_为投资理财用户提供安全、诚信、透明的互联网金融务。银行级风险控制水平,大型机构本息担保,第三方资金托管,100%保障资金安全。">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左右逢园</title>
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/zyfyCommon.css" />
+<link rel="stylesheet" href="../css/myAccount.css" />
+<link rel="stylesheet" href="../css/jPages.css" />
+<script src="../js/includeHTML.js"></script>
+</head>
+
+<body>
+<script>
+    fnHead(3);
+</script>
+<div class="myAccountWrap">
+    <div class="myAccountInfo clear">
+    	<div class="userFrame left">
+            <p class="user clear"><img src="../img/accountName.jpg" height="80" width="80" alt="touxiang" title="头像" /><span></span></p>
+            <ul>
+                <li class="one"><a href="javascript:void(0);">未认证</a></li>
+                <li class="three"><a href="javascript:void(0);">未绑定</a></li>
+            </ul>
+        </div>
+        <div class="balanceFrame left">
+            <p class="balance">现金余额</p>
+            <p class="money"><strong></strong>元</p>
+            <p class="btn"><input class="rechargeBtn" type="button" value="充值"/><input class="withdrawalsBtn" type="button" value="提现"/></p>
+        </div>
+        <div class="profit left">
+            <p class="allAssets">总资产： <strong></strong>元</p>
+            <p class="allProfit">总收益： <strong></strong>元</p>
+            <p class="frozenBar clear">
+                <span class="toProfit left">待收收益：<span></span>元</span>
+                <!-- <span class="testMoney right">体验金利息：<span></span>元</span> -->
+            </p>
+            <p class="clear">
+                <span class="toPrincipal left">待收本金：<span></span>元</span>
+                <span class="frozen right">冻结金额：<span></span>元</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="rechargeMain clear">
+	<div class="left sidebarNav">
+        <script>
+            accountNav(1);
+        </script>
+	</div>
+	<div class="right accountContent">
+        <!-- 账户总览 -->
+        <div class="accountGlobal Tabl">
+    		<div class="frame lately">
+    			<p class="title clear"><span class="left">最近投资项目</span><a class="right" id="latelyMore" href="javascript:void(0);">更多</a></p>
+    			<table>
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">标的名称</th>
+                            <th style="width:71px;">年利率（%）</th>
+                            <th style="width:60px;">期限（月）</th>
+                            <th style="width:60px;">金额（元）</th>
+                            <th style="width:84px;">预计收益（元）</th>
+                            <th>还款方式</th>
+                            <th style="width:70px;">投资时间</th>
+                            <th style="width:70px;">起息日</th>
+                            <th style="width:37px;">状态</th>
+                            <th style="width:49px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>                
+                </table>
+    		</div>
+            <!-- <div class="frame bid">
+                <p class="title clear"><span class="left">投标概况</span><a class="right" id="bidMore" href="javascript:void(0);">更多</a></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>状态</th>
+                            <th>笔数</th>
+                            <th>金额（元）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>                
+                </table>
+            </div> -->
+            <div class="frame fundRecord">
+                <p class="title clear"><span class="left">资金记录</span><a class="right" id="fundRecordMore" href="javascript:void(0);">更多</a></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>类型</th>
+                            <th>金额（元）</th>
+                            <th>时间</th>
+                            <th>状态</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>                
+                </table>
+            </div>
+            <div class="frame calendar">
+                <p class="title clear"><span class="left">资金日历</span></p>
+                <div class="dateBar">
+                    <p> <span class="year">2016</span> <span>年</span> <span class="month">8</span> <span>月</span></p>
+                    <a class="prev" href="javascript:"></a>
+                    <a class="next" href="javascript:"></a>
+                </div>
+                <ul class="weekList">
+                    <li class="active">星期日</li>
+                    <li>星期一</li>
+                    <li>星期二</li>
+                    <li>星期三</li>
+                    <li>星期四</li>
+                    <li>星期五</li>
+                    <li>星期六</li>
+                </ul>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                        <tr>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                        <tr>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                        <tr>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                        <tr>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                        <tr>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                            <td><span></span></td>
+                        </tr>
+                    </tbody>                
+                </table>
+                <div class="contrast">
+                    <p class="repay"><em></em><span>还款</span></p>
+                    <p class="invest"><em></em><span>投资</span></p>
+                    <p class="pay"><em></em><span>回款</span></p>
+                    <p class="withdrawals"><em></em><span>提现</span></p>
+                    <p class="recharge"><em></em><span>充值</span></p>
+                    <p class="loan"><em></em><span>放款</span></p>
+                </div>
+                <div class="calendarRecord">
+                    <h3></h3>
+                    <div class="recordList">
+                        <!-- <p class="repay"><em></em><span class="time">下午14:20</span><span>充值金额：100.00</span><span>充值状态：成功</span></p>
+                        <p class="invest"><em></em><span class="time">下午14:20</span><span>充值金额：100.00</span><span>充值状态：成功</span></p>
+                        <p class="pay"><em></em><span class="time">下午14:20</span><span>充值金额：100.00</span><span>充值状态：成功</span></p>
+                        <p class="withdrawals"><em></em><span class="time">下午14:20</span><span>充值金额：100.00</span></p>
+                        <p class="recharge"><em></em><span class="time">下午14:20</span><span>充值金额：100.00</span><span>充值状态：成功</span></p>
+                        <p class="loan"><em></em><span class="time">下午14:20</span><span>充值金额：100.00</span><span>充值状态：成功</span></p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 个人设置 -->
+        <div class="frame personalSetting Tabl">
+            <p class="title clear">
+                <span class="left">个人设置</span>
+            </p>
+            <p class="default userBar">
+                <span class="minTitle">用户名<em>（只能设置一次,不可修改）</em></span>
+                <span class="state">未设置</span>
+                <input class="text personSetTxet" type="text" />
+                <input class="btn userBtn" type="button" value="确定"/>
+            </p>
+            <p class="default">
+                <span class="minTitle">登录密码</span>
+                <span class="state yes">已设置</span>
+                <span class="text"></span>
+                <input class="btn passwordBtn" type="button" value="修改"/>
+            </p>
+            <p class="default mobileBar">
+                <span class="minTitle">手机号码</span>
+                <span class="state">未绑定</span>
+                <span class="text"></span>
+                <input class="btn mobileBtn" type="button" value="绑定"/>
+            </p>
+            <p class="default idauthenticated">
+                <span class="minTitle">认证信息</span>
+                <span class="state">未认证</span>
+                <span class="text"></span>
+                <input class="btn acNowBtn identityBtn" type="button" value="立即认证"/>
+            </p>
+
+            <div class="default bankCard">
+                <span class="minTitle">存管账号</span>
+                <p class="inline_block">
+                    <span>开户行：</span>
+                    <span class="bankName"></span><br />
+                    <span>绑定银行卡：</span>
+                    <span class="bankNo"></span>
+                </p>
+                <input class="btn acNowBtn bankBtn" type="button" value="绑定"/>
+            </div>
+<!--             <p class="default open2"> -->
+<!--                 <span class="minTitle">Ⅱ类账户</span> -->
+<!--                 <span class="text"></span> -->
+<!--                 <input class="btn acNowBtn openBtn" type="button" value="开通Ⅱ类账户"/> -->
+<!--             </p> -->
+            <div class="open2_form"></div>
+            <p class="default referralId">
+                <span class="minTitle">我的推荐人</span>
+                <span class="text"></span>
+            </p>
+        </div>
+        <!-- 已投项目 -->
+        <div class="frame investmentPro Tabl">
+            <ul class="frameTab">
+                <li class="active">投资项目</li>
+                <!-- <li>转让项目</li> -->
+            </ul>
+            <div class="proWrap">
+                <div class="proQuery clear">
+                    <div class="left"><span class="active">全部</span><span>未起息</span><span>回款中</span><span>已回款</span></div>
+                    <div class="right">时间：<input id="proWrapInpS" type="text" value=""/> - <input id="proWrapInpE" type="text" value=""/><input class="btn" type="button" value="查询"/></div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">标的名称</th>
+                            <th style="width:71px;">年利率（%）</th>
+                            <th style="width:60px;">期限（月）</th>
+                            <th style="width:60px;">金额（元）</th>
+                            <th style="width:84px;">预期收益（元）</th>
+                            <th>还款方式</th>
+                            <th style="width:70px;">投资时间</th>
+                            <th style="width:70px;">起息日</th>
+                            <th style="width:37px;">状态</th>
+                            <th style="width:49px;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>                
+                </table>
+                <div id="proWrapPaging" class="paging"></div>
+            </div>
+            <!-- <div class="assignment">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>项目名称</th>
+                            <th>金额（元）</th>
+                            <th>转让时间</th>
+                            <th>状态</th>
+                        </tr>
+                        <tr>
+                            <td>商贸公司短期借款24期</td>
+                            <td>1,000</td>
+                            <td>2015-11-19</td>
+                            <td>审核中</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="paging"></div>
+            </div> -->
+        </div>
+        <!-- 资金记录 -->
+        <div class="fundRecordBar frame Tabl">
+            <p class="title clear"><span class="left">资金记录</span></p>
+            <div class="function clear">
+                <div class="left"><span code="">全部资金类型</span><ul>
+                    <li code="">全部资金类型</li>
+                    <li code="INVEST">投标</li>
+                    <li code="WITHDRAW">取现</li>
+                    <li code="DEPOSIT">充值</li>
+                    <li code="LOAN">放款</li>
+                    <li code="LOAN_REPAY">贷款还款</li>
+                    <li code="DISBURSE">垫付还款</li>
+                    <li code="FAILED_LOAN_REPAY">流标返款</li>
+                    <li code="INVEST_REPAY">投资还款</li>
+                    <li code="TRANSFERIN">平台转入</li>
+                    <li code="BORROWER_REPAY">借款人还款</li>
+                    <li code="FEE_WITHDRAW">提现手续费</li>
+                    <li code="FEE_AUTHENTICATE">身份验证手续费</li>
+                    <li code="FEE_INVEST_INTEREST">投资管理费</li>
+                    <li code="FEE_LOAN_SERVICE">借款服务费</li>
+                    <li code="FEE_LOAN_MANAGE">借款管理费</li>
+                    <li code="FEE_LOAN_INTEREST">还款管理费</li>
+                    <li code="FEE_LOAN_GUARANTEE">担保费</li>
+                    <li code="FEE_LOAN_RISK">风险管理费</li>
+                    <li code="FEE_DEPOSIT">充值手续费</li>
+                    <li code="CLOSED">已关闭</li>
+                    <li code="RESULT_WATT_QUERY">结果待查</li>
+                </ul></div>
+                <div class="right">
+                    <span>时间：</span><input id="fundRecorS" class="dateInp" type="text" value=""/> - <input id="fundRecorE" class="dateInp" type="text" value=""/><input class="export" type="button" value="查询"/>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>订单号</th>
+                        <th>类型</th>
+                        <th>金额（元）</th>
+                        <th>时间</th>
+                        <th>状态</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>                
+            </table>
+            <div id="fundRecordPaging" class="paging"></div>
+        </div>
+        <!-- 借款管理begin -->
+        <div class="Tabl frame loanManage">
+            <ul class="clear nav">
+                <li class="left">借款记录</li>
+                <li class="left">还款计划</li>
+                <li class="left">代偿列表</li>
+            </ul>
+            <div class="loanBox">
+                <div class="function clear">
+                    <div class="left">
+                        <span code="ALLSTATUS">全部</span>
+                        <ul>
+                        <li code="ALLSTATUS">全部</li>
+                        <li code="OPENED">投标中</li>
+                        <li code="FINISHED">已满标</li>
+                        <li code="SETTLED">还款中</li>
+                        <li code="CLEARED">已还清</li>
+                        <li code="FAILED">已流标</li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <span>时间：</span><input id="fundRecorLs" class="dateInp" type="text" value=""/> - <input id="fundRecorLe" class="dateInp" type="text" value=""/><input class="export" type="button" value="查询"/>
+                    </div>
+                </div> 
+               <table>
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>金额（元）</th>
+                            <th>年化率</th>
+                            <th>期限</th>
+                            <th>还款方式</th>
+                            <th>借款状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="loadTab">
+                    </tbody>                
+                </table>
+                <div id="loanManagementPage" class="holder paging"></div>
+            </div>
+            <div class="loanBox">
+                <div class="function clear" style="padding-bottom: 10px;">
+                    <div class="left">
+                        <span id="isRePay" code="">全部</span>
+                        <ul>
+                        <li code="">全部</li>
+                        <li code="RP">已还</li>
+                        <li code="UN">未还</li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <span>时间：</span><input id="fundRecorRs" class="dateInp" type="text" value=""/> - <input id="fundRecorRe" class="dateInp" type="text" value=""/><input class="export" type="button" value="查询"/>
+                    </div>
+                </div> 
+                <!-- <div id="repayDetail">
+                    <span></span>
+                    <span></span>
+                </div> -->
+               <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>还款日</th>
+                            <th>利息（元）</th>
+                            <th>本金（元）</th>
+                            <th>总计（元）</th>
+                            <th>标的还款状态</th>
+                            <th>借款人还款状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="repayTab">
+                    </tbody>                
+                </table>
+                <div id="loanRepaymentPlanPage" class="holder paging"></div>
+            </div>
+            <div class="loanBox tran">
+                <div class="function clear" style="padding-bottom: 10px;">
+                    <div class="left">
+                        <span id="isRePay" code="">全部</span>
+                        <ul>
+                        <li code="">全部</li>
+                        <li code="RP">已还</li>
+                        <li code="UN">未还</li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <span>时间：</span><input id="tranStartTime" class="dateInp" type="text" value=""/> - <input id="tranEndTime" class="dateInp" type="text" value=""/><input class="export" type="button" value="查询"/>
+                    </div>
+                </div> 
+               <table>
+                    <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>还款日</th>
+                            <th>利息（元）</th>
+                            <th>本金（元）</th>
+                            <th>总计（元）</th>
+                            <th>标的还款状态</th>
+                            <th>借款人还款状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tranTab">
+                    </tbody>                
+                </table>
+                <div id="tranPage" class="holder paging"></div>
+            </div>
+        </div>
+        <!-- 借款管理end -->
+        <!-- 回款计划 -->
+        <div class="backPlanBar frame Tabl">
+            <p class="title clear"><span class="left">回款计划</span></p>
+            <div class="repayment"><span class="on">未还</span><span>已还</span></div>
+            <div class="function clear">
+                <!-- <div class="left totalRecord">共 <strong>0</strong> 笔，总额 <strong>0</strong> 元 </div> -->
+                <div class="right">
+                    <span>时间：</span><input id="dataStar" class="dateInp" type="text" value=""/> - <input id="dataEnd" class="dateInp" type="text" value=""/><input class="export" type="button" value="查询"/>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>回款日</th>
+                        <th>金额（元）</th>
+                        <th>类型</th>
+                        <th>项目</th>
+                        <th>实际回款日</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>                
+            </table>
+            <div id="backPlanPaging" class="paging"></div>
+            <p class="beCareful">1、回款资金会在回款当日24点前到达您的平台账户，请您耐心等待。</p>
+            <p class="beCareful">2、如果回款资金没有及时到账，可通过拨打热线电话400-861-5058（工作日9:00-17:30）寻求帮助。</p>
+        </div>
+        <!-- 邀请返利 -->
+        <div class="InviteRebateBar frame Tabl">
+            <p class="title clear"><span class="left">邀请返利</span></p>
+            <p class="copyUrl"><span>邀请链接</span><input id="copyInfo" type="text" value="https://www.zuoyoufy.com/html/regsiter.html?ref="/><span id="copyBtn" class="copyBtn">复制链接</span></p>
+            <p class="share bdsharebuttonbox"><span class="" data-cmd="more" >分享到</span><a class="shareQQ bds_sqq" data-cmd="sqq" href="javascript:">QQ</a><a class="shareQQRoom bds_qzone" data-cmd="qzone" href="javascript:">QQ空间</a><a class="shareSina bds_tsina" data-cmd="tsina" href="javascript:" >新浪微博</a><a class="shareQQBo bds_tqq" data-cmd="tqq" href="javascript:">腾讯微博</a></p>
+            <!-- <p class="invitedList">邀请列表</p> -->
+            <ul class="invitedList">
+                <li class="active">邀请投资列表</li>
+                <li>邀请列表</li>
+            </ul>
+            <table class="InviteInvestment">
+                <thead>
+                    <tr>
+                        <th>投资人</th>
+                        <th>投资项目</th>
+                        <th>投资金额</th>
+                        <th>日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>                
+            </table>
+            <table class="InvestmentList">
+                <thead>
+                    <tr>
+                        <th>电话号码</th>
+                        <th>姓名</th>
+                        <th>注册时间</th>
+                        <th>最后登录时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>                
+            </table>
+            <div id="InviteRebatePaging" class="paging"></div>
+        </div>
+        <!-- 我的福利 -->
+        <div class="frame Tabl servicesBar">
+            <p class="title clear"><span class="left">我的福利</span></p>
+            <div class="clear">
+                <ul class="servicesTab left">
+                    <li class="active one">体验金</li>
+                    <li class="two">红包</li>
+                </ul>
+                <p class="right ruleDescription">规则说明</p>
+                <ul class="beUsed right">
+                    <li class="active">未使用</li>
+                    <li>已使用</li>
+                </ul>
+            </div>
+            <ul class="listWrap testBidWrap">
+                <li>
+                    <ul class="clear noUsed"></ul>
+                </li>
+                <li>
+                    <ul class="wasUsed"></ul>
+                </li>
+            </ul>
+            <ul class="listWrap redPacketsWrap">
+                <li>
+                    <ul class="clear noUsed"></ul>
+                </li>
+                <li>
+                    <ul class="wasUsed"></ul>
+                </li>
+            </ul>
+            <div class="ruleDetails">
+                <p class="title">体验金、红包规则及说明</p>
+                <div class="section">
+                    <h4>体验金规则说明</h4>
+                    <p>1、体验金为新手专享，无法重复领取，仅用于平台虚拟体验；</p>
+                    <p>2、在活动中符合活动要求条件的用户，可获得相应金额的体验金；</p>
+                    <p>3、体验金仅用于体验标投资，体验标到期后本金被平台收回，投资收益归用户所有；</p>
+                    <p>4、体验金自领取之日起，有效期为30天，过期作废，请在到期日前使用；</p>
+                    <p>5、用户在真实项目中单笔投资≥1000元，体验标收益才能正常使用或提现。</p>
+                </div>
+                <div class="section">
+                    <h4>红包规则说明</h4>
+                    <p>1、左右逢园红包是左右逢园网贷平台奖励或赠与用户的电子现金券，一般通过参与平台相关活动获得；</p>
+                    <p>2、请按照红包券上的使用要求正确进行使用；</p>
+                    <p>3、红包不抵扣投资额，用户按照红包票面要求完成投资后，红包将直接变成现金并进入个人账户；</p>
+                    <p>4、每次投资仅能使用一个符合条件的红包，红包不能与其他优惠活动一同使用；</p>
+                    <p>5、红包自领取之日起，有效期为30天，过期作废，请在到期日前使用。</p>
+                </div>
+                <p class="info">注：体验金和红包的使用规则解释权归中阳财富投资控股有限公司所有</p>
+                <div class="close"></div>
+            </div>
+        </div>
+        <!-- 消息 -->
+        <!-- <div class="messageBar frame Tabl">
+            <p class="title clear"><span class="left">消息中心</span></p>
+            <ul class="frameTab">
+                <li class="active">消息</li>
+                <li>消息设置</li>
+            </ul>
+            <div class="messagewrap">
+                <div class="messagelist">
+                    <p class="clear"><span class="left">您投资的【半年财】生物科技公司借款17期已放款，开始计息。</span><span class="right">2015-11-27</span></p>
+                </div>
+                <div class="paging"></div>
+            </div>
+            <div class="messageNotice">
+                <p class="backColor">短信通知</p>
+                <p><span>信息变更：</span><input type="checkbox" id="passwordChange" /><label for="passwordChange">密码变更</label><input type="checkbox" id="codeChange" /><label for="codeChange">银行卡变更</label></p>
+                <p><span>资金变动：</span><input type="checkbox" id="cashApply" /><label for="cashApply">提现申请</label><input type="checkbox" id="cashResult" /><label for="cashResult">提现结果</label><input type="checkbox" id="rechargeSuc" /><label for="rechargeSuc">充值成功</label></p>
+                <p><span>项目状态：</span><input type="checkbox" id="proInves" /><label for="proInves">项目投资</label><input type="checkbox" id="proBack" /><label for="proBack">项目回款</label><input type="checkbox" id="proOver" /><label for="proOver">项目流标</label></p>
+                <p class="backColor">短信通知</p>
+                <p><span>项目状态：</span><input type="checkbox" id="aa" /><label for="aa">合同下发</label><input type="checkbox" id="bb" /><label for="bb">项目回款</label></p>
+                <p><span>项目状态：</span><input type="checkbox" id="cc" /><label for="cc">月对账单</label></p>
+                <p class="saveBtn"><input type="buton" value="保存设置"/></p>
+            </div>
+        </div> -->
+	</div>
+</div>
+<div id="RechargeResults">
+    <div class="mask"></div>
+    <div class="content">
+        <div class="title clear"><span class="left">完成转账</span><i class="right"></i></div>
+        <p class="msg">请您在新开转账页面完成后选择:</p>
+        <p class="success"><span class="bg">转账成功</span><a href="myAccount.html#3">查看转账记录</a></p>
+        <p class="failed"><span class="bg">转账失败</span><a class="rechargeAgain" href="myAccount.html#4">重新转账</a></p>
+    </div>
+</div>
+<script>
+    fnFoot();
+    fnRigthFloat();
+</script>
+</body>
+<script src="../js/jquery.min.1.10.2.js"></script>
+<script src="../js/laydate.js"></script>
+<script src="../js/ZeroClipboard.js"></script>
+<script src="../js/myJS.js"></script>
+<script src="../js/zycf.js"></script>
+<script type="text/javascript" src="../js/jPages.min.js"></script>
+<script>
+zycfZ.backTop();
+zycfZ.jishuqi();
+zycfZ.myAccount();
+zycfZ.myAccountUrl();
+zycfZ.copy();
+zycfZ.myData();
+zycfZ.loanManagement();
+zycfZ.calendarRecord();
+</script>
+</html>

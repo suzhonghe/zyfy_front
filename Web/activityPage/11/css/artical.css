@@ -1,0 +1,69 @@
+body, ul, p, h3, li {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.activityPage img {
+  display: block;
+  border: 0;
+  vertical-align: top; }
+
+.clear {
+  zoom: 1; }
+
+.clear:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+.left {
+  display: inline;
+  float: left; }
+
+.right {
+  display: inline;
+  float: right; }
+
+p {
+  color: #252525;
+  font-family: 'Microsoft YaHei';
+}
+
+.headBar img, .footBar img{width: 100%; min-width: 1430px;}
+.activityContent{background-color: #fc203a;}
+
+.introduceBar{width: 930px; height: 968px; padding: 0 246px 0 254px; margin: 0 auto; background: url(../img/introduceBg.jpg) no-repeat center 0;}
+.productBar{width: 930px; height: 898px; padding: 0 246px 0 254px; margin: 0 auto; background: url(../img/productBg.jpg) no-repeat center 0;}
+.playInBar{width: 930px; height: 808px; padding: 0 246px 0 254px; margin: 0 auto; background: url(../img/playIn.jpg) no-repeat center 0;}
+.msgInfoBar{width: 930px; height: 830px; padding: 0 246px 0 254px; margin: 0 auto; background: url(../img/msgBg.jpg) no-repeat center 0;}
+.congratulateBar{width: 930px; height: 1066px; padding: 0 246px 0 254px; margin: 0 auto; background: url(../img/congratulateBg.jpg) no-repeat center 0;}
+
+.activityContent h3{height: 80px; line-height: 80px; text-align: center; color:#252525; font-size: 32px; }
+
+.introduceBar h3{padding: 282px 0 36px 0;}
+.introduceBar p{line-height: 54px; padding: 0 60px 0 100px; font-size: 24px; text-indent: 2em;}
+.introduceBar p span{ color:#f90606;}
+.introduceBar .alignRight{text-align: right; padding-right: 270px;}
+
+.productBar h3{padding: 70px 0 36px 0;}
+.productBar h3 span{color:#f80505; font-size: 50px;}
+.productBar img{display: block; margin: 0 auto;}
+
+.playInBar h3{padding: 100px 0 26px 0; color:#fff;}
+.playInBar .clearBoth{padding: 0 36px;}
+.playInBar .clearBoth .setWidth{width:90px;font-size: 20px; color:#fff; line-height: 58px;}
+.playInBar .clearBoth .rightFont{width:768px;font-size: 20px; color:#fff; line-height: 58px;}
+.playInBar .erweima{padding-top: 46px;}
+.playInBar .weixinBar{width: 274px; padding-left:112px;}
+.playInBar .appBar{width: 292px; padding-right: 45px;}
+.playInBar .weixinBar img, .playInBar .appBar img{display: block; width: 135px; height: 135px; margin: 0 auto;}
+.playInBar .weixinBar p, .playInBar .appBar p{text-align: center; line-height: 46px; color:#fff; font-size: 18px;}
+
+.msgInfoBar h3{padding: 106px 0 26px 0; color:#fff;}
+.msgInfoBar p{line-height: 58px; padding: 0 46px; font-size: 24px; color:#fff;}
+
+.congratulateBar .congWrap{padding-top: 300px;}
+.congratulateBar .congWrap p{text-align: center; line-height: 78px; color:#fff; font-size: 32px;}
+

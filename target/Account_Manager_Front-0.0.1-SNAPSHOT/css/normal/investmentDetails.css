@@ -1,0 +1,174 @@
+@charset "utf-8";
+body{background: #f7f7f7;}
+.minNav{width:1000px;margin:0 auto;line-height: 30px;padding:23px 0 12px 0;color:#333;font-size: 14px;}
+.minNav a,.minNav span{display: inline-block;padding-left: 18px;background: url(../img/right.gif) no-repeat 8px center;}
+.minNav .indexLink{background: none;}
+.minNav span{color:#999;}
+.minNav a:hover{text-decoration: underline;color:#333;}
+
+.detailsContent{width:1000px;margin:0 auto;}
+.detailsContent .projectDetails{width:640px;border:1px solid #e4e4e4;background: #fff;}
+.detailsContent .invesmentMoney{width:350px;border:1px solid #e4e4e4;background: #fff;position: relative;}
+.detailsContent .title,.detailsContent .title{line-height: 43px;height:43px;border-bottom:1px solid #e4e4e4;padding:0 28px;color:#333;font-size: 16px;}
+.detailsContent .title{font-size: 20px;}
+.detailsContent .list{padding:19px 26px 40px 26px;border-bottom:1px dashed #e4e4e4;height:85px;overflow: hidden;}
+.detailsContent .list li{float:left;border-right:1px dashed #e4e4e4;padding-left: 24px;}
+.detailsContent .list p{line-height: 32px;font-size: 14px;color:#666;}
+.detailsContent .list .one{width:168px;}
+.detailsContent .list .two{width:230px;}
+.detailsContent .list .three{border:none;width:116px;}
+.detailsContent .list .rate{color:#ff6f0a;font-size: 18px;line-height: 46px;}
+.detailsContent .list .rate strong{font-size:36px;}
+.detailsContent .list .total{color:#333;font-size: 18px;line-height: 46px;}
+.detailsContent .list .total strong{font-size: 36px;}
+.detailsContent .list .deadline{color:#333;font-size: 18px;line-height: 46px;}
+.detailsContent .list .deadline strong{font-size: 36px;}
+.detailsContent .method{margin-top:26px;line-height: 40px;color:#666;font-size: 14px;padding:0 50px;}
+.detailsContent .method em{color:#333;}
+.detailsContent .method strong{color:#eb6100;}
+.detailsContent .schedule{padding:0 50px;line-height: 40px;color:#666;font-size: 14px;margin-bottom: 26px;}
+.detailsContent .schedule .progressBar{width:98px;height:8px;margin:17px 10px 0;position: relative;overflow: hidden;background:#d9d9d9;}
+.detailsContent .schedule .top{width:0px;height:8px;position:absolute;overflow: hidden;left:0;top:0;background:#289cff;}
+.detailsContent .balance{width:290px;height:26px;border:1px solid #e4e4e4;margin:12px auto;font-size: 14px;color:#333;line-height: 26px;text-align: center;}
+.detailsContent .balance a,.detailsContent .balance strong,.minNav .loginStatus a{color:#f46501;padding:0 4px;text-decoration: underline;}
+.detailsContent .balance a:hover,.minNav .loginStatus a:hover{color:#ff842e}
+.detailsContent .inputMoney{width:292px;height:40px;line-height: 40px;margin:0 auto;}
+.detailsContent .inputMoney .minus,.detailsContent .inputMoney .plus{width:36px;height:36px;background: url(../img/minus_plus.png) no-repeat;margin:2px;vertical-align: middle;display: inline-block;cursor:pointer;}
+.detailsContent .inputMoney .minus{background-position:0 0px;}
+.detailsContent .inputMoney .plus{background-position:0 -108px;}
+.detailsContent .inputMoney input{height:38px;width:178px;border:1px solid #e4e4e4;line-height: 38px;margin:0 6px;color:#8c8c8c;font-size: 14px;vertical-align: middle;padding:0 10px;}
+.detailsContent .profits{width:292px;height:46px;line-height: 46px;margin:0 auto;color:#333;font-size: 14px;}
+.detailsContent .profits strong{color:#ff6f0a;}
+.detailsContent .agreements{width:292px;line-height: 30px;margin:0 auto;color:#5a5a5a;}
+.detailsContent .agreements input{vertical-align: middle;}
+.detailsContent .agreements a,.detailsContent .agreements span{vertical-align: middle;}
+.detailsContent .agreements a{color:#289cff;vertical-align: middle;}
+.detailsContent .agreements a:hover{text-decoration: underline;}
+.detailsContent .invesmentBtn{width:292px;height:52px;line-height: 52px;margin:16px auto 24px;}
+.detailsContent .invesmentBtn input{width:292px;height:52px;line-height: 52px;color:#fff;background: #ff6f0a;border-radius:4px;text-align: center;font-size: 24px;cursor:pointer;}
+.invesmentMoney .noSignIn{height:256px;display: none;}
+.invesmentMoney .noSignIn .msg{text-align: center;line-height: 30px;color:#333;font-size: 16px;margin:20px 0 40px;}
+.invesmentMoney .noSignIn .bg{height:72px;background: url(../img/errorBg.png) no-repeat center 0;}
+.invesmentMoney .noSignIn .inpBtn{height:52px;text-align: center;}
+.invesmentMoney .noSignIn .inpBtn a{height:52px;width:292px;line-height: 52px;text-align: center;color:#fff;font-size: 24px;border-radius: 4px;cursor:pointer;background-color: #ff6f0a;display: inline-block;}
+.invesmentMoney .noSignIn .inpBtn a:hover{text-decoration: underline;}
+
+.invesmentInfo,.safe_Problem{width:998px;margin:14px auto 0;border:1px solid #e4e4e4;background: #fff;}
+.infoTab{height:39px;width:100%;position: relative;top:-1px;border-bottom:1px solid #e4e4e4;}
+.infoTab li{color:#333;font-size: 16px;line-height:38px;padding:0 26px;float:left;cursor:pointer;}
+.infoTab .active{border-bottom: 1px solid #fff;border-top: 1px solid #ff6f0a;border-right:1px solid #e4e4e4;}
+.infoContent{padding:34px 50px;}
+.infoContent h4{height:28px;line-height: 28px;color:#333;font-size: 14px;font-weight: bold;}
+.infoContent p{line-height: 24px;color:#999;font-size: 14px;margin-top:12px;}
+.infoContent strong{color:#333;font-weight: bold;}
+.infoContent .resetMargin{margin:0;}
+.infoContent .authentication span{display: inline-block;padding:50px 36px 13px 0;line-height: 30px;color:#666;}
+.infoContent .authentication .one{background: url(../img/authenticationBg1.png) no-repeat;}
+.infoContent .authentication .two{background: url(../img/authenticationBg2.png) no-repeat;}
+.infoContent .authentication .three{background: url(../img/authenticationBg3.png) no-repeat;}
+.infoContent .authentication .four{background: url(../img/authenticationBg4.png) no-repeat;}
+
+.invesmentInfo .infoImg{position: relative;height:250px;padding:20px 47px;overflow: hidden;display: none;}
+.invesmentInfo .infoImg .prev{width:26px;height:48px;position: absolute;left:10px;top:100px;background: url(../img/direction.png) no-repeat 0 -96px;cursor:pointer;}
+.invesmentInfo .infoImg .prev:hover{background-position: 0 -144px;}
+.invesmentInfo .infoImg .next{width:26px;height:48px;position: absolute;right:10px;top:100px;background: url(../img/direction.png) no-repeat 0 0px;cursor:pointer;}
+.invesmentInfo .infoImg .next:hover{background-position: 0 -48px;}
+.invesmentInfo .infoImg .wrap{height:250px;overflow: hidden;width:904px;background: #fff;position: relative;}
+.invesmentInfo .infoImgList{width:1356px;position: absolute;left:0;top:0;}
+.invesmentInfo .infoImgList li{float:left;padding:0 6px;width:214px;height:250px;}
+.invesmentInfo .infoImgList li a{width:214px;height:250px;display: inline-block;}
+.invesmentInfo .infoImgList li img{width:214px;height:250px;display: inline-block;}
+
+.safe_Problem{padding-bottom: 40px;}
+.safe_Problem .safe{padding:0 28px;}
+.safe_Problem .safe li{}
+.safe_Problem .safe .icon{background: url(../img/safeBg.png) no-repeat;width:90px;height:100px;overflow: hidden;}
+.safe_Problem .safe .bg1{background-position: 0 38px;}
+.safe_Problem .safe .bg2{background-position: -90px 38px;}
+.safe_Problem .safe .bg3{background-position: -180px 38px;}
+.safe_Problem .safe .bg4{background-position: -270px 38px;}
+.safe_Problem .safe .bg5{background-position: -360px 38px;}
+.safe_Problem .safe .bg6{background-position: -450px 38px;}
+.safe_Problem .safe .bg7{background-position: -540px 38px;}
+.safe_Problem .safe .right{width:852px;}
+.safe_Problem .safe .right h4{padding:38px 0 0 44px;height:39px;line-height: 39px;font-size: 16px;color:#289cff;background: url(../img/number.png) no-repeat;}
+.safe_Problem .safe .right .num1{background-position: 0 0;}
+.safe_Problem .safe .right .num2{background-position: 0 -77px;}
+.safe_Problem .safe .right .num3{background-position: 0 -154px;}
+.safe_Problem .safe .right .num4{background-position: 0 -231px;}
+.safe_Problem .safe .right .num5{background-position: 0 -308px;}
+.safe_Problem .safe .right .num6{background-position: 0 -385px;}
+.safe_Problem .safe .right .num7{background-position: 0 -462px;}
+.safe_Problem .safe .right p{font-size: 14px;color:#666;line-height: 23px;}
+.safe_Problem .problem{padding:0 28px;display: none;}
+.safe_Problem .problem p{padding:0 22px;}
+.safe_Problem .problem .title{line-height: 42px;color:#289cff;font-size: 16px;}
+.safe_Problem .problem .answer{line-height: 24px;color:#999;font-size: 14px;}
+
+.record{width:998px;border:1px solid #e4e4e4;margin:14px auto 40px;background: #fff;}
+.record h4{height:40px;border-bottom:1px solid #e4e4e4;line-height: 40px;color:#333;font-size: 16px;padding-left: 28px;}
+.record .recordTitle{margin:30px auto 0;width:906px;}
+.record .recordInfo{margin:0 auto;width:906px;overflow: hidden;}
+.record .recordTitle li{float:left;width:224px;height:30px;line-height: 30px;font-size: 14px;color:#333;overflow: hidden;}
+.record .recordInfo li span{width:224px;display: inline-block;line-height: 40px;height:40px;font-size: 14px;overflow: hidden;color:#999;}
+.record .recordInfo li .red{color:#eb6100;}
+.record .num{height:52px;line-height: 52px;color:#999;font-size: 14px;text-align: right;padding-right: 50px;}
+.record .num strong{color:#333;}
+
+.minNav .loginStatus{width:352px;text-align: center;}
+.minNav .loginStatus span,.minNav .loginStatus a{background: none;}
+.detailsContent .testeDetail{padding-bottom: 30px;}
+.detailsContent .testeDetail .title{border:none;padding:0 80px;background: url(../img/testBid_icon.png) no-repeat 50px 28px;line-height: 74px;height:50px;}
+.detailsContent .testeDetail .list{padding:19px 26px 35px 26px;}
+.detailsContent .testeDetail .list li{border:none;}
+.testeDetail .list .one{width:260px;}
+.testeDetail .list .two{width:280px;}
+.invesmentMoney .signInState p{text-align: center;}
+.invesmentMoney .redPacketsSel{width:292px;margin:0 auto;}
+.invesmentMoney .signInState .testMoney{padding-top: 8px;height:70px;line-height: 70px;font-size: 16px;color:#333;}
+.invesmentMoney .signInState .testMoneyNum,.invesmentMoney .signInState .loginStatus{height:66px;line-height: 66px;font-size: 36px;color:#ff6f0a;}
+.invesmentMoney .signInState .testMoneyNum{display: none;}
+.invesmentMoney .signInState .loginStatus{font-size: 16px;color:#333;}
+.invesmentMoney .signInState .loginStatus a{color:#f46501;}
+.invesmentMoney .signInState .loginStatus a:hover{color:#ff842e;}
+.invesmentMoney .signInState .profits{width:auto;height:62px;line-height: 62px;font-size: 14px;color:#333;}
+.invesmentMoney .signInState .profit{width:auto;height:50px;line-height: 50px;font-size: 14px;color:#333;}
+.invesmentMoney .signInState .redPacketsBtn{width:auto;height:62px;line-height: 62px;font-size: 14px;color:#ff842e;text-align: right;padding-left:20px;background: url(../img/redPacketsIcon.png) no-repeat;cursor:pointer;display: none;}
+.signInState .redPacketsBtn span{display: block;padding-right: 20px;background: url(../img/redPacketsIcon.png) no-repeat right -62px;}
+.invesmentMoney .signInState .profits strong{color:#ff6f0a;}
+.testeInfo{padding:11px 50px;width:900px;}
+.testeInfo .bgRight{padding:0 300px 140px 0;background: url(../img/testBg1.jpg) no-repeat right 35px;}
+.testeInfo .bgLeft{padding:0 0 140px 300px;background: url(../img/testBg2.jpg) no-repeat left 35px;}
+.testeInfo .bgRight.bg3{padding:0 300px 140px 0;background: url(../img/testBg3.jpg) no-repeat right 35px;border-bottom:1px solid #e4e4e4;}
+.testeInfo .aLine{height:100px;line-height: 100px;font-size: 12px;color:#666;text-align: right;border-top: 1px solid #ccc;}
+.testeInfo .p{height:24px;line-height: 24px;font-size: 14px;color:#666;}
+.testeInfo .title{height:74px;line-height: 74px;font-size: 20px;color:#333;}
+.testeInfo .section{color:#666;}
+
+.invesmentMoney .redPacketsWrap{width:292px;position: absolute;left:18px;top:200px;background-color: #fff;border:1px solid #e0e0e0;border-radius: 4px;box-shadow: 0 5px 16px rgba(123,127,134,0.35);padding:0 10px;z-index: 999;display: none;}
+.redPacketsWrap .redPacketsList li{padding:10px 14px 10px 36px;border-bottom: 1px dotted #e0e0e0;font-size: 12px;color:#999;background: url(../img/redPacketsIcon.png) no-repeat 10px -186px;cursor:pointer;}
+.redPacketsWrap .redPacketsList .active,.redPacketsWrap .redPacketsList li:hover{background-position: 10px -124px;}
+.redPacketsWrap .redPacketsList span,.redPacketsWrap .redPacketsList strong{vertical-align: middle;font-size: 14px;color:#333;}
+.redPacketsWrap .redPacketsList p{height:24px;line-height: 24px;}
+.redPacketsWrap .redPacketsList .pdLeft{padding-left: 8px;}
+.redPacketsWrap .redPacketsList strong{font-size: 20px;color:#ff6f0a;}
+.invesmentMoney .redPacketsWrap .info{line-height: 24px;padding:10px;color:#999;}
+
+#RechargeResults{position:fixed;left:0;top:0;width:100%;height:100%;z-index: 99;display: none;}
+#RechargeResults .mask{position: absolute;left:0;top:0;width:100%;height:100%;background:#000;opacity:0.5;filter:alpha(opacity=50);}
+#RechargeResults .content{position: absolute;left:50%;top:50%;width:458px;height:262px;background:#fff;border:1px solid #898989;margin-left: -229px;margin-top: -132px;}
+#RechargeResults .title{height:48px;line-height: 48px;border-bottom: 1px solid #c9c9c9;padding:0 36px;font-size: 18px;color:#444;}
+#RechargeResults .title i{background: url(../img/regsiterClose.png) no-repeat;display: inline-block;width:24px;height:48px;cursor:pointer;}
+#RechargeResults .msg{padding:0 36px;height:84px;line-height: 84px;font-size: 20px;color:#444;}
+#RechargeResults .success,#RechargeResults .failed{padding:0 36px;height:20px;line-height: 20px;font-size: 16px;color:#444;}
+#RechargeResults .failed{margin-top: 38px;}
+#RechargeResults .success a,#RechargeResults .failed a{color:#289cff;display: inline-block;}
+#RechargeResults .success a:hover,#RechargeResults .failed a:hover{text-decoration: underline;}
+#RechargeResults .success span,#RechargeResults .failed span{display: inline-block;}
+#RechargeResults .success .bg{background: url(../img/yes.png) no-repeat;padding:0 48px 0 28px;}
+#RechargeResults .failed .bg{background: url(../img/failed.png) no-repeat;padding:0 48px 0 28px;}
+#RechargeResults .failed .space{padding:0 4px;}
+
+.bigImg{width:1000px;position:absolute;top:40px;left:50%;margin-left:-500px;z-index: 999;}
+.bigImg img{display: block;width:1000px;}
+.bigImg .bigImgClose{position: absolute;top:0;right:0;width:20px;height:20px;text-align: center;line-height: 20px;font-size: 20px;color:#fff;background-color: #6A6A6A;cursor:pointer;}

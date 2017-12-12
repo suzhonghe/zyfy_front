@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.LoanTransRecordDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.LoanTransRecord" id="rm">
+		<id column="ID" property="id"/>
+		<result column="LOAN_ID" property="loanId"/>
+		<result column="ORDER_ID" property="orderId"/>
+		<result column="TRANS_DATE" property="transDate"/>
+		<result column="TRANS_TIME" property="transTime"/>
+		<result column="TYPE" property="type"/>
+		<result column="STATUS" property="status"/>
+		<result column="OPRATION" property="opration"/>
+		<result column="USER_ID" property="userId"/>
+		<result column="AMOUNT" property="amount"/>
+		<result column="REMARK" property="remark"/>
+	</resultMap>
+	
+	<sql id="sqlfile">
+		ID,LOAN_ID,ORDER_ID,TRANS_DATE,TRANS_TIME,TYPE,STATUS,OPRATION,USER_ID,AMOUNT,REMARK
+	</sql>
+	
+	<insert id="insertLoanTransRecord" parameterType="com.zhongyang.java.zyfyfront.pojo.LoanTransRecord">
+		insert into TB_LOAN_TRANS_RECORD(ID,LOAN_ID,ORDER_ID,TRANS_DATE,TRANS_TIME,TYPE,STATUS,OPRATION,
+		USER_ID,AMOUNT)values(#{id},#{loanId},#{orderId},#{transDate},#{transTime},#{type},#{status},#{opration},#{userId},#{amount})
+	</insert>
+	
+	<update id="updateLoanTransRecord" parameterType="com.zhongyang.java.zyfyfront.pojo.LoanTransRecord">
+		update TB_LOAN_TRANS_RECORD
+			<set>
+				<if test="status !=null">STATUS=#{status},</if>
+				<if test="remark !=null">REMARK=#{remark}</if>
+			</set>
+			<if test="orderId !=null">
+				where 1=1 
+				<if test="orderId !=null"> and ORDER_ID=#{orderId}</if>
+			</if>
+	</update>
+</mapper>

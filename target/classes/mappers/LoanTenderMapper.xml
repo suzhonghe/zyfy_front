@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.zhongyang.java.dao.LoanTenderDao'>
+ 	<resultMap type="com.zhongyang.java.zyfyfront.pojo.LoanTender" id="rm">
+ 		<id column="LOAN_ID" property="loanId"/>
+ 		<result column="AMOUNT" property="amount"/>
+ 	</resultMap>
+
+ 	<update id="updateLoanTenderByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.LoanTender">
+ 		update TB_LOAN_TENDER
+ 			<set>
+ 				<if test="amount !=null">AMOUNT=AMOUNT+#{amount},</if>
+ 			</set>
+ 			<if test="loanId !=null">
+ 				where 1=1
+	 			<if test="loanId !=null">and LOAN_ID=#{loanId}</if>
+ 			</if>
+ 			
+ 	</update>
+ 	
+ 	<select id="selectByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.LoanTender" resultMap="rm">
+ 		select LOAN_ID,AMOUNT
+ 		from TB_LOAN_TENDER where 1=1
+ 			<if test="loanId !=null and loanId!=''">and LOAN_ID=#{loanId}</if>
+ 	</select>
+</mapper>

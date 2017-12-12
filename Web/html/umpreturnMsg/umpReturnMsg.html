@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="author" content ="中阳财富"/>
+<meta name="keywords" content="中阳财富,左右逢园,中阳财富官网,互联网金融,P2P网贷,投资理财,P2P理财,互联网理财,网络贷款,小额贷款,100%本息保障,zhongyangcf.com">
+<meta name="description" content="中阳财富 www.zhongyangcf.com - 国内最规范的互联网金融P2P网贷平台之一_为投资理财用户提供安全、诚信、透明的互联网金融务。银行级风险控制水平,大型机构本息担保,第三方资金托管,100%保障资金安全。">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左右逢园</title>
+<link rel="shortcut icon" href="../../favicon.ico" />
+<style>
+*{padding:0;margin:0;}
+p{text-align: center;height:52px;line-height: 52px;font-size: 24px;color:#666;margin-top: 60px;}
+.rechargeFailded{display:none;}
+.rechargeSuccess span{display: inline-block;background: url(../../img/openSuccess.png) no-repeat;height:52px;padding-left: 84px;}
+.rechargeFailded span{display: inline-block;background: url(../../img/failedBig.png) no-repeat;height:52px;padding-left: 84px;}
+.timeOut{font-size: 16px;height:30px;overflow: -hidden;line-height: 30px;}
+.timeOut .close{display: inline-block;margin-left: 30px;padding:0 18px;height:30px;background-color: #ff6f0a;line-height: 30px;vertical-align:middle;border-radius:4px;overflow: hidden;color:#fff;cursor:pointer;}
+.timeOut .close:hover{background-color: #f05a08}
+.timeOut strong,.timeOut span{vertical-align:middle;display: inline-block;}
+</style>
+</head>
+
+<body>
+<p class="rechargeSuccess title"><span></span></p>
+<p class="rechargeFailded title"><span></span></p>
+<p class="timeOut"><span>页面将在&nbsp;</span><strong>5</strong><span>&nbsp;秒后自动关闭</span><span class="close">立即关闭</span></p>
+</body>
+<script src="../../js/jquery.min.1.10.2.js"></script>
+<script>
+var str = window.location.toString();
+
+var arr = str.split(/&|=|,/);
+for(var i=0;i<arr.length;i++){
+	if(arr[i]=="ret_msg"){
+		$(".title").html(decodeURI(arr[i+1]));
+		break;
+	}
+};
+
+if(str.indexOf("ret_code=0000")){
+	$(".rechargeSuccess").show();
+	$(".rechargeFailded").hide();
+	//document.write("充值成功，5后自动关闭");
+}else{
+	$(".rechargeSuccess").hide();
+	$(".rechargeFailded").show();
+	//document.write("充值失败，5后自动关闭");
+}
+
+
+var num = 5;
+var myTime = setInterval(function(){
+    num--;
+    $(".timeOut strong").html(num);
+    if(num == 0){
+        clearInterval(myTime);
+        window.open("","_self").close();
+    }
+},1000);
+$(".timeOut .close").click(function(){
+	 window.open("","_self").close();
+});
+
+</script>
+</html>

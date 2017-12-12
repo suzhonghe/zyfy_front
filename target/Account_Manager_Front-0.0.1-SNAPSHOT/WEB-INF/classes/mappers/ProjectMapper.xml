@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.ProjectDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.Project" id="rm">
+		<id column="ID" property="id"/>
+		<result column="AMOUNT" property="amount"/>
+		<result column="AUTOABLE" property="autoable"/>
+		<result column="DESCRIPTION" property="description"/>
+		<result column="HIDDEN" property="hidden"/>
+		<result column="METHOD" property="method"/>
+		<result column="PRODUCTID" property="productId"/>
+		<result column="RATE" property="rate"/>
+		<result column="RISKINFO" property="riskInfo"/>
+		<result column="SERIAL" property="serial"/>
+		<result column="P_STATUS" property="status"/>
+		<result column="TIMESUBMIT" property="timeSubmit"/>
+		<result column="TITLE" property="title"/>
+		<result column="DAYS" property="days"/>
+		<result column="MONTHS" property="months"/>
+		<result column="YEARS" property="years"/>
+		<result column="GUARANTEE_ID" property="guaranteeId"/>
+		<result column="GUARANTEE_REALM" property="guaranteeRealm"/>
+		<result column="MAXAMOUNT" property="maxAmount"/>
+		<result column="MINAMOUNT" property="minAmount"/>
+		<result column="STEPAMOUNT" property="stepAmount"/>
+		<result column="INVESTINTERESTFEE" property="investInterestFee"/>
+		<result column="LOANGUARANTEEFEE" property="loanGuaranteeFee"/>
+		<result column="LOANINTERESTFEE" property="loanInterestFee"/>
+		<result column="LOANMANAGEFEE" property="loanManageFee"/>
+		<result column="LOANRISKFEE" property="loanRiskFee"/>
+		<result column="LOANSERVICEFEE" property="loanServiceFee"/>
+		<result column="SURPLUSAMOUNT" property="surplusAmount"/>
+		<result column="PUBLISEDAMOUNT" property="publishedAmount"/>
+		<result column="OPERATIONRANGE" property="operationRange"/>
+		<result column="REPAYSOURCE" property="repaySource"/>
+		<result column="FIRMINFO" property="firmInfo"/>
+		<result column="LOANUSERID" property="loanUserId"/>	
+		<result column="LEGALPERSON" property="legalPerson"/>	
+		<result column="AGENTPERSON" property="agentPerson"/>		
+	</resultMap>
+	
+	<sql id="sqlfield">
+		select ID,AMOUNT,AUTOABLE,DESCRIPTION,
+			HIDDEN,METHOD,PRODUCTID,RATE,RISKINFO,SERIAL,P_STATUS,TIMESUBMIT,TITLE,DAYS,MONTHS,
+			YEARS,GUARANTEE_ID,GUARANTEE_REALM,MAXAMOUNT,MINAMOUNT,STEPAMOUNT,
+			INVESTINTERESTFEE,LOANGUARANTEEFEE,LOANINTERESTFEE,LOANMANAGEFEE,
+			LOANRISKFEE,LOANSERVICEFEE,SURPLUSAMOUNT,PUBLISEDAMOUNT,
+			OPERATIONRANGE,REPAYSOURCE,FIRMINFO,LOANUSERID,LEGALPERSON,AGENTPERSON
+		from TB_LOANREQUEST where 1=1
+	</sql>
+	<select id="selectProjectByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.Project" resultMap="rm">
+		<include refid="sqlfield"/>
+			<if test="id!=null">and ID=#{id}</if>	
+	</select>
+</mapper>

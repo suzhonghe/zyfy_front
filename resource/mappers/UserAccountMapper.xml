@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+
+<mapper namespace='com.zhongyang.java.dao.UserAccountDao'>
+	<resultMap
+		type="com.zhongyang.java.zyfyfront.vo.useraccount.UserInvestMoneyVo"
+		id="rm">
+		<id column="USERID" property="userid" />
+		<result column="STATUS" property="status" />
+		<result column="AmountInterest" property="amountInterest" />
+		<result column="amountCapital" property="amountCapital" />
+	</resultMap>
+
+	<select id="selectUserAccountInfo" parameterType="String"
+		resultMap="rm">
+		SELECT i.USERID userid ,r.STATUS status,SUM(r.AMOUNTINTEREST)
+		AmountInterest,SUM(r.AMOUNTPRINCIPAL) amountCapital 
+		FROM TB_INVEST_REPAYMENT r
+		LEFT JOIN TB_INVEST i ON r.INVEST_ID = i.ID
+		WHERE 1=1
+		<if test="_parameter!=null and _parameter!=''">
+			and
+			i.USERID = #{_parameter}
+		</if>
+		AND i.STATUS in ('SETTLED','CLEARED')
+		GROUP BY r.STATUS;
+	</select>
+
+	<resultMap type="com.zhongyang.java.zyfyfront.vo.useraccount.FundRecordAccount"
+		id="frrm">
+		<id column="ID" property="id" />
+		<result column="AMOUNT" property="amount" />
+		<result column="DESCRIPTION" property="description" />
+		<result column="OPERATION" property="operation" />
+		<result column="ORDERID" property="orderid" />
+		<result column="STATUS" property="status" />
+		<result column="TIMERECORDED" property="timerecorded" />
+		<result column="TYPE" property="type" />
+		<result column="USER_ID" property="userId" />
+	</resultMap>
+	<sql id="sqlforFundRecord">
+		select ID,AMOUNT ,DESCRIPTION,OPERATION,ORDERID,STATUS,
+		TIMERECORDED,TYPE,USER_ID from TB_FUND_RECORD where 1=1
+	</sql>
+	<select id="selectUserFundRecord" parameterType="com.zhongyang.java.system.page.Page"
+		resultMap="frrm">
+		<include refid="sqlforFundRecord" />
+		<if test="params.containsKey('userId')">
+			and USER_ID=#{params.userId}
+		</if>
+		<if test="params.containsKey('type') and params.type != null and params.type !=''">
+			AND TYPE = #{params.type}
+		</if>
+		<if test="startTime!= null">
+			AND TIMERECORDED &gt;= #{startTime}
+		</if>
+		<if test="endTime !=null">
+			AND TIMERECORDED &lt;= #{endTime}
+		</if>
+		AND OPERATION NOT IN('RELEASE','FREEZE','INITIALIZED')
+		order by
+		TIMERECORDED DESC
+	</select>
+
+	<resultMap type="com.zhongyang.java.zyfyfront.vo.useraccount.UserInvestRecordVo"
+		id="irv">
+		<id column="userId" property="userId" />
+		<result column="repayStatus" property="repayStatus" />
+		<result column="amountInterest" property="amountInterest" />
+		<result column="amountPrincipal" property="amountPrincipal" />
+		<result column="title" property="title" />
+		<result column="repayMethod" property="repayMethod" />
+		<result column="dueDate" property="dueDate" />
+		<result column="repayDate" property="repayDate" />
+		<result column="currentPeriod" property="currentPeriod" />
+		<result column="loanStatus" property="loanStatus" />
+		<result column="timeSettled" property="timeSettled" />
+		<result column="days" property="days" />
+		<result column="months" property="months" />
+		<result column="years" property="years" />
+		<result column="investTime" property="investTime" />
+		<result column="productName" property="productName" />
+
+
+	</resultMap>
+	<sql id="selectUserInvestInfoSql">
+		SELECT
+		R.AMOUNTINTEREST amountInterest,
+		R.AMOUNTPRINCIPAL amountPrincipal,
+		I.SUBMITTIME investTime,
+		L.TITLE title,
+		R.STATUS repayStatus,
+		I.REPAYMETHOD repayMethod,
+		R.DUEDATE dueDate,
+		R.REPAYDATE repayDate,
+		R.CURRENTPERIOD currentPeriod,
+		L.L_STATUS loanStatus,
+		L.TIMESETTLED timeSettled,
+		L.DAYS days,
+		L.MONTHS months,
+		L.YEARS years,
+		L.PRODUCTNAME productName,
+		I.USERID userId,
+		I.ID investId
+		from
+		TB_INVEST I
+		LEFT JOIN
+		TB_INVEST_REPAYMENT R ON I.ID = R.INVEST_ID
+		LEFT JOIN
+		TB_LOAN L ON L.ID = I.LOANID
+		WHERE
+		I.ID = R.INVEST_ID AND L.ID = I.LOANID
+	</sql>
+	<select id="selectUserInvestInfo" parameterType="com.zhongyang.java.system.page.Page"
+		resultMap="irv">
+		<include refid="selectUserInvestInfoSql" />
+		<if test="params.containsKey('userId')">
+			and
+			I.USERID = #{params.userId}
+		</if>
+
+		<if test="params.containsKey('repayStatus') and params.repayStatus != null and params.repayStatus != ''">
+			and R.STATUS in ('${params.repayStatus}')
+		</if>
+		<if test="strStart != null and strStart != ''">
+			and DUEDATE &gt;= STR_TO_DATE(#{strStart},'%Y-%m-%d')
+		</if>
+		<if test="strEnd != null and strEnd !=''">
+			AND DUEDATE &lt;= STR_TO_DATE(#{strEnd},'%Y-%m-%d')
+		</if>
+		and I.STATUS in ('SETTLED','CLEARED')
+		ORDER BY
+		<if test="params.status=='UN'">R.DUEDATE ASC</if>
+		<if test="params.status=='PR'">R.REPAYDATE DESC</if>
+		<if test="params.status=='' or params.status==null">
+			L.TITLE,R.CURRENTPERIOD
+		</if>
+
+	</select>
+
+	<resultMap type="com.zhongyang.java.zyfyfront.vo.useraccount.UserInvestMoneyVo"
+		id="investRecord">
+		<id column="USERID" property="userid" />
+		<result column="STATUS" property="status" />
+		<result column="AmountInterest" property="amountInterest" />
+		<result column="amountCapital" property="amountCapital" />
+	</resultMap>
+
+	<sql id="sqlforUserLoanInvestRecord">
+		SELECT
+		L.TITLE title,I.AMOUNT amount,L.RATE rate,L.METHOD repayMethod,I.STATUS
+		investStatus,L.L_STATUS loanStatus,
+		L.TIMESETTLED timeSettled,L.DAYS days,
+		L.MONTHS months,
+		L.YEARS years,
+		I.USERID userId,
+		L.ID loanId,
+		L.ADDRATE addRate,
+		L.PRODUCTNAME productName,
+		I.SUBMITTIME investTime,
+		I.ID investId,
+		C.ISDEL isdel
+		from
+		TB_INVEST I
+		LEFT JOIN TB_LOAN L ON L.ID = I.LOANID
+		LEFT JOIN TB_INVEST_CONTRACT_INFO C ON C.INVESTID=I.ID
+		WHERE
+		L.ID = I.LOANID
+		AND I.STATUS IN('SETTLED','AUDITING','CLEARED')
+	</sql>
+	<resultMap type="com.zhongyang.java.zyfyfront.vo.useraccount.UserInvestLoanVo"
+		id="uirv">
+
+		<result column="amount" property="amount" />
+		<result column="rate" property="rate" />
+		<result column="addRate" property="addRate" />
+		<result column="title" property="title" />
+		<result column="repayMethod" property="repayMethod" />
+		<result column="investStatus" property="investStatus" />
+		<result column="loanId" property="loanId" />
+		<result column="loanStatus" property="loanStatus" />
+		<result column="timeSettled" property="timeSettled" />
+		<result column="days" property="days" />
+		<result column="months" property="months" />
+		<result column="years" property="years" />
+		<result column="investTime" property="investTime" />
+		<result column="productName" property="productName" />
+		<result column="investId" property="investId" />
+		<result column="isDel" property="isDel" />
+
+	</resultMap>
+
+	<select id="selectUserLoanInvestInfo" parameterType="com.zhongyang.java.system.page.Page"
+		resultMap="uirv">
+		<include refid="sqlforUserLoanInvestRecord" />
+		<if test="params.containsKey('userId')">
+			and
+			I.USERID = #{params.userId}
+		</if>
+
+		<if
+			test="params.containsKey('loanStatus') and params.loanStatus!=null and params.loanStatus!=''">
+			and L.L_STATUS in(${params.loanStatus})
+		</if>
+		<if
+			test="startTime != null">
+			AND L.TIMESETTLED &gt;= #{startTime}
+		</if>
+		<if
+			test="endTime !=null">
+			AND L.TIMESETTLED &lt;= #{endTime}
+		</if>
+
+		ORDER BY I.SUBMITTIME desc
+
+	</select>
+	
+	<sql id="sqluserinfo">
+		select u.ID, u.ENABLED,u.LASTLOGINDATE,u.LASTMODIFYDATE,u.LOGINNAME,
+		u.MOBILE,us.MOBILE REFMOBILE,u.USERTYPE,u.U_NAME,u.ID_CODE,u.CUSTTYPE,acc.OPEN_II_ACCOUNT,acc.PLATCUST,acc.CARD_NO,acc.OPEN_BRANCH
+		from TB_USER u left join TB_BM_ACCOUNT acc on u.ID=acc.USER_ID
+		left join TB_USER us on u.REFERRAL_ID=us.ID
+		where 1=1
+	</sql>
+	<resultMap type="com.zhongyang.java.zyfyfront.vo.useraccount.UserInfo" id="userInfo">
+		<id column="ID" property="userId"/>
+		<result column="ENABLED" property="enabled"/>
+		<result column="LASTLOGINDATE" property="lastLoginDate"/>
+		<result column="LASTMODIFYDATE" property="lastModifyDate"/>
+		<result column="LOGINNAME" property="loginName"/>
+		<result column="MOBILE" property="mobile"/>
+		<result column="REFMOBILE" property="refMobile"/>
+		<result column="USERTYPE" property="userType"/>
+		<result column="U_NAME" property="userName"/>
+		<result column="ID_CODE" property="idCode"/>
+		<result column="CARD_NO" property="cardNo"/>
+		<result column="OPEN_BRANCH" property="bankCode"/>
+		<result column="PLATCUST" property="platcust"/>
+		<result column="CUSTTYPE" property="custType"/>
+		<result column="OPEN_II_ACCOUNT" property="open_ii_account"/>
+	</resultMap>
+	<select id="selectUserInfo" parameterType="String" resultMap="userInfo">
+		<include refid="sqluserinfo"/>
+			<if test="_parameter!=null and _parameter!=''">
+				and u.ID = #{_parameter}
+			</if>
+	</select>
+</mapper>

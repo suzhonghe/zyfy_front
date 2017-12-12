@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.CmsColumnDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.CmsColumn" id="rm">
+		<id column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="TIME" property="time"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select ID id,NAME name,TIME time from TB_CMS_COLUMN where 1=1
+	</sql>
+	<select id="selectByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.CmsColumn" resultMap="rm">
+		<include refid="sqlfile"/>
+		<if test="name!=null">
+		and NAME  like CONCAT(CONCAT('%', #{name}), '%')
+		</if> limit 1
+	</select>
+</mapper>

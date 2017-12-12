@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>投资</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <script src="../js/sea.js"></script>
+    <script src="../js/flexible.js"></script>
+</head>
+<body>
+<div class="payment">
+	<header><a href="javascript:"></a><span>投资</span></header>
+	<div class="wrap">
+		<div class="bidDetails">
+		    <div class="productBar">
+				<span class="product"></span>
+				<span class="title"></span>
+				<span></span>
+			</div>
+			<div class="aRows">
+				<p class="rate alignLeft">年利率：<span></span></p>
+				<p class="month alignRight">期限：<span></span>个月</p>
+			</div>
+			<div class="aRows">
+				<p class="surplus alignLeft">剩余可投：<span></span>元</p>
+				<p class="mothed alignRight">按月付息到期还本</p>
+			</div>
+		</div>
+		<div class="investmentAmount">
+			<div class="aRows">
+				<p class="available alignLeft">可用金额：<span></span>元</p>
+				<a class="alignRight rechargeLink" href="./../html/account/recharge.html">去充值</a>
+			</div>
+			<div class="aRows hasBorder">
+				<p class="alignLeft">投资金额</p>
+				<div class="alignRight investAccount"><input type="text" placeholder="" />元</div>
+			</div>
+		</div>
+		<!-- <p class="redPackets">使用红包<span code="">￥0</span></p> -->
+		<p class="msg"><span></span>本人同意签署<a href="agreement/LoanContract.html">《借款合同》</a></p>
+		<p class="msg"><span></span>本人接受筹标期内资金不计利息，投资意向不可撤销。</p>
+	</div>
+	<div class="redPackWrap">
+		<div class="selectWrap aRows">
+			<span class="alignLeft redPackNum">共0张可用</span>
+			<span class="alignRight sureBtn">确定</span>
+		</div>
+		<ul class="redPackList"></ul>
+	</div>
+	<footer class="bottomBtn"><span>确定</span></footer>
+</div>
+<script>
+seajs.use('./../js/payment.js');
+</script>
+</body>
+</html>

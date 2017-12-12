@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.BannerPhotoDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.BannerPhoto" id="rm">
+		<id column="ID" property="id"/>
+		<result column="PHOTONAME" property="photoName"/>
+		<result column="PATHADDRESS" property="pathAddress"/>
+		<result column="JUMPADDRESS" property="jumpAddress"/>
+		<result column="TIME" property="time"/>
+		<result column="TYPE" property="type"/>
+		<result column="WHETHERSHOW" property="whetherShow"/>
+		<result column="SERIALNUMBER" property="serialNumber"/>
+		<result column="TITLE" property="title"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select ID id,PHOTONAME photoName,PATHADDRESS pathAddress,JUMPADDRESS jumpAddress,TIME time,TYPE type,WHETHERSHOW whetherShow,SERIALNUMBER serialNumber,TITLE title
+			from TB_PHOTO_MANAGER where 1=1
+	</sql>
+	<select id="selectByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.BannerPhoto" resultMap="rm">
+		<include refid="sqlfile"/>
+			<if test="id!=null">
+				and ID=#{id}
+			</if>
+			<if test="pathAddress!=null">
+				and PATHADDRESS=#{pathAddress}
+			</if>
+			<if test="type!=null">
+				and TYPE=#{type}
+			</if>
+			<if test="whetherShow!=null">
+				and WHETHERSHOW=#{whetherShow}
+			</if>
+			order by SERIALNUMBER asc,TIME desc limit 0,5
+	</select>
+</mapper>

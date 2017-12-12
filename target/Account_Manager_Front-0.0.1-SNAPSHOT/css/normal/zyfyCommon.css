@@ -1,0 +1,256 @@
+@charset "utf-8";
+/*清除默认*/
+
+body,ul,ol,p,h3,h4,li,input,table,tr,th,td,form{
+	margin:0;
+	padding:0;
+}
+body{min-width: 1000px;}
+em{font-style:normal}
+img{}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+li {
+	list-style:none;
+}
+input,
+select {
+	border: 0;
+	outline: none;
+}
+img {
+	display:block;
+	border:0;
+	vertical-align:top;
+}
+a {
+	text-decoration:none;
+	color:#000;
+	cursor:pointer;
+}
+.clear {
+	zoom:1;
+}
+.clear:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+.left {
+	display: inline;
+	float: left;
+}
+.right {
+	display: inline;
+	float: right;
+}
+body {
+	font: 12px 'Microsoft Yahei','Arial';
+}
+.w1000 {
+	width: 1000px;
+	margin: 0 auto;
+}
+a:hover {
+	color: #eb6100;
+}
+/*公用头尾*/
+html,body {
+	height: 100%;
+}
+.page {
+	min-height: 100%;
+	position: relative;
+}
+.cont {
+	padding-bottom: 391px;
+}
+/*input默认文字begin*/
+.placeholder {
+	position: relative;
+}
+.placeholder label.posi {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	margin-top: -7px;
+	color: #ababab;
+}
+.captchaBox.placeholder label.posi{
+	margin-top: -16px;
+	left: 52px;
+}
+/*input默认文字begin*/
+
+/* top head */
+.wrap{width:100%;background:#5f5f5f;}
+.topBar,.logBar{width:1000px;margin:0 auto;}
+.topLeft{float:left;height:38px;}
+.topLeft span{color:#e1e1e1;line-height:38px;}
+.topLeft strong{font-size:14px;line-height:38px;color:#e1e1e1;padding:0 12px;}
+.topRight{float:right;height:38px;}
+.topRight a{font-size:14px;color:#e1e1e1;margin-left:22px;line-height:38px;height:38px; }
+.topRight .login{display:inline-block;width:70px;height:22px;line-height:22px;text-align: center;background:#27acf9;color:#fff;margin-left:12px;}
+.topRight .register{display:inline-block;width:70px;height:22px;line-height:22px;text-align: center;background:#ed5a00;color:#fff;margin-left:12px;}
+.wrap .msg {
+	padding-left: 20px;
+}
+
+.log{width:414px;height:98px;vertical-align:top;float:left;}
+.headNav{float:right;}
+.headNav li{padding:25px 18px;float:left;}
+.headNav a{color:#333333;font-size:18px;line-height:46px;display:block;height:46px;}
+.headNav a:hover{color:#eb6100;}
+.headNav .active a{color:#eb6100;border-bottom:2px solid #eb6100;}
+.headNav .animate{background:url(../img/hotBg.gif) no-repeat right 31px;}
+.loginStatus{color: #e1e1e1;font-size: 14px}
+.topRight .loginName{color: #e1e1e1;margin-left: 0px;text-decoration:underline}
+.topRight .userOut{text-decoration:underline}
+.topRight .AppDownload{position:relative;z-index: 10;}
+.topRight .AppDownload:hover .QRcode{display: block;}
+.topRight .AppDownload .download{width:68px;height:24px;border:1px solid #a0a0a0;border-radius:4px;padding:0px 10px 2px 28px;background: url(../img/appDownload.png) no-repeat 10px -3px;}
+.topRight .AppDownload .QRcode{width:156px;position:absolute;left:-30px;top:30px;border:1px solid #d1d1d1;overflow: hidden;z-index: 9999;background-color: #fff;display: none;}
+.topRight .AppDownload .alignLeft,.footerTop .weixin .alignLeft{float:left;padding:32px 32px 10px;}
+.topRight .AppDownload .minWidth{padding:0;width:1px;height:86px;border-left:1px dotted #999;overflow: hidden;margin-top:32px;}
+.topRight .AppDownload .QRcode img,.footerTop .weixin .alignLeft img{width:92px;height:92px;display: block;}
+.topRight .AppDownload .QRcode p,.footerTop .weixin .alignLeft p{height:30px;line-height: 30px;margin-top:12px;font-size:12px;color:#697a92;text-align: center;}
+.topRight .AppDownload .QRcode p{width:92px;}
+.topRight .AppDownload .QRcode .ipho,.footerTop .weixin .alignLeft .ipho{background-position: 0 -30px;}
+.topRight .AppDownload .QRcode .android,.footerTop .weixin .alignLeft .android{background-position: 0 -60px;}
+.footerTop .weixin .alignLeft{padding:0px 20px 10px;}
+.footerTop .weixin .appMargin{padding:0px 20px 10px 50px;}
+.footerTop .weixin .ipho,.footerTop .weixin .android{width:110px;}
+.footerTop .weixin .alignLeft img,.footerTop .weixin .appMargin img{padding:10px;background-color: #fff;}
+/* .footerTop .weixin{border-left:1px solid #697a92;} */
+/* top head end */
+
+#footer {
+	
+	bottom: 0;
+	width: 100%;
+	padding: 40px 0 10px 0;
+	background-color: #262c34;
+	/*margin-top: 20px;*/
+}
+#footer .footerTop a {
+	color: #999;
+}
+#footer .footerTop a:hover {
+	color: #eb6100;
+}
+#footer .footerTop {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #797c81;
+}
+#footer .footerTop .info {
+	padding-left: 10px;
+	padding-top: 8px;
+}
+#footer .footerTop .info li {
+	background-repeat: no-repeat;
+	background-position: left center;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 46px;
+	margin-bottom: 28px;
+	font-size: 14px;
+}
+#footer .footerTop .info li a {
+	color: #fff;
+}
+#footer .footerTop .info li.tel {
+	font-size: 18px;
+	color: #eb6100;
+	background-image: url("../img/tel.png");
+}
+#footer .footerTop .info li.qq {
+	background-image: url("../img/qq.png");
+}
+#footer .footerTop .info li.email {
+	margin: 0;
+	background-image: url("../img/email.png");
+}
+#footer .footerTop .webMap li{
+	padding: 0 36px;
+	font-size: 14px;
+}
+#footer .footerTop .webMap li.last {
+	padding-right: 0;
+}
+#footer .footerTop .webMap li h4 {
+	margin-bottom: 14px;
+	color: #fff;
+}
+#footer .footerTop .webMap li p{
+	line-height: 24px;
+}
+#footer .footerBottom,
+#footer .footerBottom a {
+	color: #818283;
+
+}
+#footer .footerBottom {
+	padding-top: 22px;
+}
+#footer .footerBottom p {
+	text-align: center;
+	line-height: 22px;
+}
+#footer .footerBottom p.firs {
+	text-align: left;
+}
+#footer .footerBottom p.firs span {
+	padding: 0 2px;
+}
+#footer .footerBottom p.mid {
+	font-size: 14px;
+	padding-bottom: 4px;
+}
+#footer .footerBottom p.las img {
+	display: inline-block;
+}
+
+/* floatWindow */
+.floatWindow{position:fixed;right:0;bottom:60px;margin-right:16px;z-index:3;}
+.floatWindow li{width:48px;height:48px;margin-bottom:4px;background:url(../img/floatWindow.png) no-repeat;cursor:pointer;position:relative;}
+.floatWindow span,.floatWindow a{line-height:16px;font-size:14px;color:#fff;padding:8px;word-wrap:break-word;display:block;background:#ff6f0a;border-radius:2px;display:none;text-align: center;}
+.floatWindow li:hover span{display:block}
+.floatWindow li:hover a{display:block}
+.floatWindow li:hover img{display:block}
+.floatWindow .jishuqi{background-position:0 0;}
+.floatWindow .qq{background-position:0 -48px;}
+.floatWindow .weixin{background-position:0 -96px;}
+.floatWindow .backTop{background-position:0 -144px;display:none;}
+.floatWindow .weixin img{position:absolute;left:-150px;top:-42px;width:140px;height:140px;border:1px solid #cfcfcf;display:none;}
+/* floatWindow end */
+
+/* Calculator */
+#Calculator {position:fixed;right:0;top:520px;margin-right:84px;width:160px;height:239px;border:1px solid #e9e8e8;border-radius:4px;padding:10px 10px 5px 10px;background-color:#f7f6f6;display:none;z-index:99;}
+#Calculator h3{background:url(../img/CalculatorBg.png) no-repeat;line-height:24px;height:24px;margin-bottom:12px;}
+#Calculator h3 span{display:block;text-indent:38px;float:left;color:#333;font-size:16px;line-height:24px;cursor:pointer;}
+#Calculator h3 i{display:block;float:right;width:11px;height:24px;background:url(../img/closeBg.png) no-repeat 0 center;cursor:pointer;}
+#Calculator .yuan{position:relative;color:#999;font-size:14px;}
+#Calculator .yuan input{height:26px;width:122px;border:1px solid #e9e8e8;line-height:26px;padding-left:10px;vertical-align:middle;color:#999;}
+#Calculator .yuan em{border:1px solid #e9e8e8;border-left:0;display:inline-block;height:26px;width:25px;background-color:#fff;vertical-align:middle;text-align:center;line-height:26px;}
+#Calculator .yuanMsg{position:absolute;left:0;top:-20px;line-height:20px;background:yellow;display:none;}
+#Calculator .time{position:relative;margin-top:5px;color:#999;font-size:14px;}
+#Calculator .time input{height:26px;width:36px;border:1px solid #e9e8e8;line-height:26px;padding-left:10px;vertical-align:middle;color:#999;}
+#Calculator .time em{border:1px solid #e9e8e8;border-left:0;display:inline-block;height:26px;width:25px;background-color:#fff;text-align:center;line-height:26px;vertical-align:middle;}
+#Calculator .time .mon{border-right:0;width:38px;}
+#Calculator .monMsg{position:absolute;left:0;top:-20px;line-height:20px;background:yellow;display:none;}
+#Calculator .rateMsg{position:absolute;left:86px;top:-20px;line-height:20px;background:yellow;display:none;}
+#Calculator .option{position:relative;margin-top:9px;color:#999;font-size:14px;}
+#Calculator .option p{height:26px;border:1px solid #e9e8e8;line-height:26px;text-indent:10px;background:url(../img/bottom.gif) no-repeat 142px 12px;cursor:pointer;}
+#Calculator .option ul{position:absolute;left:0;top:26px;width:100%;display:none;}
+#Calculator .option ul li{line-height:26px;background:#dbdbdb;text-indent:10px;cursor:pointer;}
+#Calculator .option ul li:hover{background:#c3c3c3;color:#000;}
+#Calculator .btn{margin:15px 0 10px 0;height:28px;width:100%;}
+#Calculator .btn input{width:76px;height:28px;color:#fff;text-align:center;line-height:28px;cursor:pointer;}
+#Calculator .start{float:left;background:#eb6100;}
+#Calculator .reset{float:right;background:#b0b0b0;}
+#Calculator .interest,#Calculator .principal{line-height:26px;font-size:14px;color:#666;}
+#Calculator .interest em,#Calculator .principal em{color:#eb6100;}
+/* Calculator end */
+
+.topRight .company {
+	background-color: #0CBB52;
+}

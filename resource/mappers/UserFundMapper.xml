@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+
+<mapper namespace='com.zhongyang.java.dao.UserFundDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.UserFund" id="rm">
+		<id column="ID" property="id"/>
+		<result column="USER_ID" property="userId"/>
+		<result column="AVAILABLE_AMOUNT" property="availableAmount"/>
+		<result column="DEPOSIT_AMOUNT" property="depositAmount"/>
+		<result column="DUE_IN_AMOUNT" property="dueInAmount"/>
+		<result column="DUE_OUT_AMOUNT" property="dueOutAmount"/>
+		<result column="FROZEN_AMOUNT" property="frozenAmount"/>
+		<result column="TIMECREATED" property="timeCreated"/>
+		<result column="TIMELASTUPDATE" property="timeLastUpdate"/>
+		<result column="WITHDRAW_AMOUNT" property="withdrawAmount"/>
+		<result column="UF_STATUS" property="ufStatus"/>
+		<result column="ALL_REVENUE" property="allRevenu"/>
+		<result column="DUE_REVENUE" property="dueRevenu"/>
+	</resultMap>
+	
+	<sql id="sqlfield">
+		select ID,USER_ID,AVAILABLE_AMOUNT,DEPOSIT_AMOUNT,DUE_IN_AMOUNT,DUE_OUT_AMOUNT,
+		FROZEN_AMOUNT,TIMECREATED,TIMELASTUPDATE,WITHDRAW_AMOUNT,
+		UF_STATUS,ALL_REVENUE ,DUE_REVENUE
+		from TB_USER_FUND where 1=1
+	</sql>
+	
+	<insert id="insertUserFund" parameterType="com.zhongyang.java.zyfyfront.pojo.UserFund">
+		insert into TB_USER_FUND(ID,USER_ID,TIMECREATED,TIMELASTUPDATE)values(#{id},#{userId},#{timeCreated},#{timeLastUpdate})
+	</insert>
+	
+	<update id="updateUserFundByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.UserFund">
+		update TB_USER_FUND
+			<set>
+				<if test="availableAmount !=null">AVAILABLE_AMOUNT=AVAILABLE_AMOUNT+#{availableAmount},</if>
+				<if test="depositAmount !=null">DEPOSIT_AMOUNT=DEPOSIT_AMOUNT+#{depositAmount},</if>
+				<if test="dueInAmount !=null">DUE_IN_AMOUNT=DUE_IN_AMOUNT+#{dueInAmount},</if>
+				<if test="dueOutAmount !=null">DUE_OUT_AMOUNT=DUE_OUT_AMOUNT+#{dueOutAmount},</if>
+				<if test="frozenAmount !=null">FROZEN_AMOUNT=FROZEN_AMOUNT+#{frozenAmount},</if>
+				<if test="withdrawAmount !=null">WITHDRAW_AMOUNT=WITHDRAW_AMOUNT+#{withdrawAmount},</if>
+				<if test="allRevenu !=null">ALL_REVENUE=ALL_REVENUE+#{allRevenu},</if>
+				<if test="dueRevenu !=null">DUE_REVENUE=DUE_REVENUE+#{dueRevenu},</if>
+				<if test="ufStatus !=null">UF_STATUS=#{ufStatus},</if>
+				<if test="timeLastUpdate !=null">TIMELASTUPDATE=#{timeLastUpdate},</if>
+			</set>
+		where USER_ID=#{userId}
+	</update>
+	
+	<select id="selectUserFundByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.UserFund" resultMap="rm">
+		<include refid="sqlfield"/>
+			<if test="userId!=null and userId!=''">and USER_ID=#{userId}</if>
+	</select>
+</mapper>

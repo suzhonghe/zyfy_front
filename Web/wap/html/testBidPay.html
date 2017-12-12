@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="CN-zh">
+<head>
+    <meta charset="UTF-8" />
+    <title>体验标支付</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <script src="../js/sea.js"></script>
+    <script src="../js/flexible.js"></script>
+</head>
+<body>
+<div class="testBidMobile">
+    <header><a href="../index.html"></a><span>投资</span></header>
+    <div class="wrap">
+    	<div class="bidDetails">
+    		<h3><p>新手体验标</p></h3>
+    		<div class="aRows">
+    			<p class="alignLeft rate">预计年化收益：0%</p>
+    			<p class="alignRight month">期限：0天</p>
+    		</div>
+    		<div class="aRows">
+    			<p class="alignLeft mount">用户体验金余额：0元</p>
+    			<p class="alignRight">购买单日起息</p>
+    		</div>
+    	</div>
+    	<div class="payMoney">
+    		<div class="aRows hasBorder">
+				<p class="alignLeft">投资金额</p>
+				<div class="alignRight investAccount"><span>0</span>元</div>
+			</div>
+    	</div>
+    </div>
+    <footer class="bottomBtn"><span>投资</span></footer>
+</div>
+<script>
+   seajs.use('./../js/testBidPay.js'); 
+</script>
+</body>
+</html>

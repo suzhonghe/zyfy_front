@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>我的账户</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <script src="../js/sea.js"></script>
+    <script src="../js/flexible.js"></script>
+</head>
+<body>
+<div class="myAccount">
+	<header>
+		<p class="userName"></p>
+		<p class="amount"></p>
+		<div class="aRows profit">
+			<p class="alignLeft profitAmount">累计收益：<span></span>元</p>
+			<p class="alignRight balance">可用余额：<span></span>元</p>
+		</div>
+		<div class="setUpBtn"></div>
+	</header>
+	<div class="action"><a class="withdrawals alignLeft" href="javascript:">提现</a><a class="recharge alignRight" href="javascript:">充值</a></div>
+	<div class="paddingBottom">
+		<div class="block">
+			<p class="backPlanBar"><a href="account/paymentPlan.html">回款计划</a></p>
+			<div class="aLine"></div>
+			<p class="investmentPro"><a href="account/votedProject.html">已投项目</a></p>
+			<div class="aLine"></div>
+			<p class="fundRecordBar"><a href="account/fundRecord.html">资金记录</a></p>
+		</div>
+		<div class="block">
+			<p class="InviteRebateBar"><a href="account/invitation.html">邀请列表</a></p>
+			<!-- <div class="aLine"></div>
+			<p class="redPackLink"><a href="account/redPackPage.html">我的福利</a></p> -->
+		</div>
+		<!-- <div class="block">
+			<p class="contactUs"><span>联系我们</span></p>
+			<div class="aLine"></div>
+			<p class="aboutUs"><span>关于我们</span></p>
+		</div> -->
+	</div>
+	<footer class="bottomNav">
+	    <a href="../index.html" class="homeBtn"></a>
+	    <a href="javascript:" class="accountBtn"></a>
+	</footer>
+</div>
+<script>
+	seajs.use('./../js/myAccount.js');
+</script>
+</body>
+</html>

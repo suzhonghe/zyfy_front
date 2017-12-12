@@ -1,0 +1,77 @@
+@charset "utf-8";
+$n:750/16;
+body,ul,p,h3,li{margin:0;padding:0;font-family: 'Microsoft YaHei';}
+li {list-style:none;}
+img {display:block;border:0;vertical-align:top;}
+body{background-color: #fc203a;}
+.clear {
+  zoom:1;
+}
+.clear:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.left {
+  display: inline;
+  float: left;
+}
+.right {
+  display: inline;
+  float: right;
+}
+body{background-color: #e40012; }
+
+/* h3{height: 104rem/$n; line-height: 104rem/$n; text-align: center; background: url(../img/title_M.png) no-repeat center center; background-size: 433rem/$n 70rem/$n; font-size: 28rem/$n; color:#252525;}
+h3 span{font-size: 32rem/$n; color:#f80505;}
+.borderBar{width: 100%; height: 34rem/$n; background: url(../img/borderBg_M.jpg) no-repeat; background-size: 100% 34rem/$n;}
+.lineBar{width: 100%; height: 32rem/$n; background-color: #dc2323; border-bottom: 2rem/$n solid #9c0000; margin: 12rem/$n auto;}
+.borderBar1{width: 100%; height: 40rem/$n; background: url(../img/borderBg1_M.jpg) no-repeat; background-size: 100% 40rem/$n;}
+.borderBar1.marginTop{margin-top: 20rem/$n;}
+.borderBar1.marginTop1{margin-top: 80rem/$n;}
+.borderBar2{width: 100%; height: 36rem/$n; background: url(../img/borderBg2_M.jpg) no-repeat; background-size: 100% 36rem/$n;} */
+
+.headBar img{width: 100%; }
+
+.content{ padding: 10rem/$n 20rem/$n 0; position: relative;}
+.content .title{padding: 58rem/$n 0 34rem/$n; height: 98rem/$n; line-height: 98rem/$n; text-align: center; font-size: 40rem/$n; color:#403323; font-weight: bold; text-indent: 0;}
+.content .title span{color:#ff0700;}
+
+.introduce{ height: 461rem/$n; background: url(../img/m-introduce.jpg) no-repeat center 0; background-size: 710rem/$n 461rem/$n;}
+.introduce p{font-size: 22rem/$n; color:#4c4c4c; line-height: 38rem/$n; padding: 0 20rem/$n; text-indent: 2em;}
+.introduce span{ color:#ff0700;}
+
+.projectBar{ height: 1054rem/$n; background: url(../img/m-project.jpg) no-repeat center 0; background-size: 710rem/$n 1054rem/$n;}
+.projectBar .productImg{ position: relative;padding:0 40rem/$n;}
+.projectBar img{ display: block; margin: 0 auto; width: 630rem/$n; }
+.projectBar .productImg .btn1{width: 86rem/$n; height: 86rem/$n; position: absolute; right: 92rem/$n; top: 134rem/$n;}
+.projectBar .productImg .btn2{width: 86rem/$n; height: 86rem/$n; position: absolute; right: 92rem/$n; top: 414rem/$n;}
+.projectBar .productImg .btn3{width: 86rem/$n; height: 86rem/$n; position: absolute; right: 92rem/$n; top: 692rem/$n;}
+
+.playInBar{ padding-top: 184rem/$n; background: url(../img/m-method.jpg) no-repeat center 0; background-size: 710rem/$n 846rem/$n;}
+.playInBar .clearBoth{padding: 4rem/$n 30rem/$n;}
+.playInBar .clearBoth .setWidth{width: 12%; min-width:90rem/$n; font-size: 22rem/$n; color:#333; line-height: 35rem/$n;}
+.playInBar .clearBoth .rightFont{width: 86%; font-size: 22rem/$n; color:#fff; line-height: 35rem/$n;}
+.playInBar .erweima{padding-top: 4rem/$n;}
+.playInBar .weixinBar, .playInBar .appBar{width: 50%;}
+.playInBar .weixinBar img, .playInBar .appBar img{display: block; width: 180rem/$n; height: 180rem/$n; margin: 0 auto;}
+.playInBar .weixinBar p, .playInBar .appBar p{text-align: center; line-height: 78rem/$n; color:#fff; font-size: 24rem/$n;}
+
+.msgInfoBar{ background: url(../img/m-activityTime.jpg) no-repeat center 0; background-size: 710rem/$n 393rem/$n; margin-top: 46rem/$n;}
+.msgInfoBar .title{ padding-bottom: 0; padding-top: 0;}
+.msgInfoBar p{line-height: 30rem/$n; padding: 0 50rem/$n; font-size: 22rem/$n; color:#4c4c4c;}
+
+.footBar{margin-top: 50rem/$n; height: 842rem/$n; background: url(../img/m-foot.jpg) no-repeat center 0; background-size: 100% 1088rem/$n; padding-top: 246rem/$n; }
+.footBar .congratulate{ padding: 20rem/$n 0; width: 416rem/$n; height: 160rem/$n; margin: 0 auto; background-color: #d50407; box-shadow: 0 0 20rem/$n rgba(0,0,0,0.7);}
+.footBar .congratulate p{ font-size: 22rem/$n; color:#fff; line-height: 38rem/$n; text-align: center;}
+.footBar .ji{ width: 400rem/$n; height: 56rem/$n; margin: 54rem/$n auto 0;}
+.footBar .ji p{ font-size: 16rem/$n; color:#412b09; line-height: 28rem/$n; text-align: center;}
+
+.congratulateMsg{width: 100%; height: 70rem/$n; position: absolute; left: 0; color:#1a1a1a; padding-top: 12rem/$n; font-size: 14rem/$n; text-align: center; letter-spacing: 15rem/$n;  background: url(../img/m-title.png) no-repeat center 0; text-indent: 10rem/$n; line-height: 30rem/$n;  background-size: 100% 70rem/$n;}
+.wsry{  top: -26rem/$n;}
+.cygj{  top: 450rem/$n;}
+.xxsc{  top: 1510rem/$n;}
+.djdl{  top: 2256rem/$n;}
+.xckl{  top: 2620rem/$n;}
+
+

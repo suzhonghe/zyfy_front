@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.InvestRepaymentDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.InvestRepayment" id="rm">
+		<id column="ID" property="id" />
+		<result column="CURRENTPERIOD" property="currentPeriod" />
+		<result column="REPAYAMOUNT" property="repayAmount" />
+		<result column="REPAYDATE" property="repayDate" />
+		<result column="STATUS" property="status" />
+		<result column="SOURCE_ID" property="sourceId" />
+		<result column="AMOUNTINTEREST" property="amountInterest" />
+		<result column="AMOUNTOUTSTANDING" property="amountOutStanding" />
+		<result column="AMOUNTPRINCIPAL" property="amountPrincipal" />
+		<result column="DUEDATE" property="dueDate" />
+		<result column="INVEST_ID" property="investId" />
+		<result column="TITLE" property="loanTittle"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select r.ID,r.CURRENTPERIOD,r.REPAYAMOUNT,r.REPAYDATE,r.STATUS,r.SOURCE_ID,
+		r.AMOUNTINTEREST,r.AMOUNTOUTSTANDING,r.AMOUNTPRINCIPAL,r.DUEDATE,r.INVEST_ID,l.TITLE
+		from TB_INVEST_REPAYMENT r left join TB_INVEST i on r.INVEST_ID=i.ID
+		left join TB_LOAN l on i.LOANID=l.ID
+		where 1=1
+	</sql>
+	<select id="selectInvestRepaymentByPage" parameterType="com.zhongyang.java.system.page.Page" resultMap="rm">
+		<include refid="sqlfile"/>
+			and i.STATUS in('SETTLED','CLEARED')
+		<if test="strStart != null and strStart != ''">
+			and DUEDATE &gt;= STR_TO_DATE(#{strStart},'%Y-%m-%d')
+		</if>
+		<if test="strEnd != null and strEnd !=''">
+			AND DUEDATE &lt;= STR_TO_DATE(#{strEnd},'%Y-%m-%d')
+		</if>
+		<if test="params.containsKey('status') and params.status='UN'">
+			and r.STATUS in('UNDUE','OVERDUE')
+		</if>
+		<if test="params.containsKey('status') and params.status='PR'">
+			and r.STATUS in('REPAYED','PREPAY')
+		</if>
+		<if test="params.containsKey('userId') and params.userId !=''">
+			and i.USERID=#{params.userId}
+		</if>
+		order by
+		<if test="params.status=='UN'">r.DUEDATE ASC</if>
+		<if test="params.status=='PR'" >r.REPAYDATE DESC</if>
+		<if test="params.status=='' or params.status==null" >l.TITLE,r.CURRENTPERIOD</if>
+	</select>
+	
+</mapper>

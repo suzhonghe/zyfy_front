@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>设置</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.min.css" />
+    <script src="../../js/sea.js"></script>
+    <script src="../../js/flexible.js"></script>
+</head>
+<body>
+<div class="setUp">
+	<header><a href="../myAccount.html"></a><span>设置</span></header>
+	<div class="wrap">
+		<div class="setUpMain">
+			<a href="identity.html" class="aRows">
+				<p class="alignLeft bg1">身份认证</p>
+				<p class="alignRight identInfo"></p>
+			</a>
+			<div class="aLine"></div>
+			<a href="identity.html" class="aRows">
+				<p class="alignLeft bg2">绑定银行卡</p>
+				<p class="alignRight bankInfo"></p>
+			</a>
+		</div>
+		<div class="aLine"></div>
+		<p class="removeCode aRows">
+			<span class="alignLeft unbank">银行卡解绑</span>
+			<span class="alignRight open2"><!-- 开通Ⅱ类账户 --></span>
+		</p>
+		<div class="aLine"></div>
+		<p class="outLogin"><span>退出登录</span></p>
+		<div class="formWrap"></div>
+	</div>
+</div>
+<script>
+seajs.use('./../../js/setUp.js');
+</script>
+</body>
+</html>

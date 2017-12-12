@@ -1,0 +1,128 @@
+body, ul, p, h3, li {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.activityPage img {
+  display: block;
+  border: 0;
+  vertical-align: top; }
+
+.clear {
+  zoom: 1; }
+
+.clear:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+.left {
+  display: inline;
+  float: left; }
+
+.right {
+  display: inline;
+  float: right; }
+
+.activityPage {
+  background-color: #fffeee; }
+
+p {
+  font-size: 16px;
+  color: #000;
+  padding: 4px 0;
+  font-family: 'Microsoft YaHei';
+  line-height: 28px; }
+
+.activityHead {
+  background: url(../img/activityHead.jpg) no-repeat center 0;
+  padding: 332px 1.80513rem 0 2.05128rem;
+  background-size: 780px 348px; }
+  .activityHead p {
+    line-height: 28px;
+    text-indent: 2em;
+    font-size: 16px; }
+    .activityHead p strong {
+      color: #ff720f;
+      font-size: 20px; }
+
+.activityContent {
+  padding: 0 1.27179rem; }
+
+.activityTitle {
+  height: 30px;
+  padding: 0.32821rem 0 0.24615rem 0.12308rem;
+  font-size: 16px;
+  color: #fff;
+  line-height: 30px;
+  background: url(../img/titleBg.png) no-repeat 0 0.32821rem;
+  background-size: 94px 42px; }
+
+.project {
+  height: 522px;
+  padding: 10px 0 30px;
+  position: relative; }
+  .project .projectImg {
+    width: 627px;
+    height: 482px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px; }
+  .project .boy {
+    width: 112px;
+    height: 118px;
+    display: block;
+    position: absolute;
+    top: -112px;
+    right: 20px; }
+  .project .btn {
+    width: 72px;
+    height: 88px;
+    position: absolute;
+    right: 60px;
+    cursor: pointer;}
+  .project .btn1 {
+    top: 50px; }
+  .project .btn2 {
+    top: 210px; }
+  .project .btn3 {
+    top: 376px; }
+
+.clearBoth {
+  overflow: hidden;
+  zoom: 1; }
+
+.activityPage .clearBoth p {
+  float: left;
+  line-height: 0.53333rem;
+  color: #000; }
+
+.clearBoth .setWidth {
+  width: 2.05128rem; }
+
+.clearBoth .rightFont {
+  width: 620px; }
+
+.erweima div {
+  width: 350px;
+  padding-top: 20px; }
+
+.erweima img {
+  width: 240px;
+  height: 240px;
+  margin: 0 auto; }
+
+.activityPage .erweima p {
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #ff7210; }
+
+.foot {
+  height: 410px;
+  padding-top: 20px;
+  background: url(../img/activityFoot.jpg) no-repeat center bottom;
+  background-size: 780px 410px; }

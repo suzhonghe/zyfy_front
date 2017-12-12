@@ -1,0 +1,58 @@
+@charset "utf-8";
+$n:640/16;
+body,div,ul,ol,p,h1,h2,h3,h4,h5,h6,li,input,table,tr,th,td,header,footer,nav{
+  margin:0;  padding:0;
+  font-size:24rem/$n;
+}
+body {
+  line-height: 1; height: auto; overflow: hidden; min-height: 100%;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+  background: #fff;
+  font-family:'Hiragino Sans GB','Microsoft YaHei','simsun';
+  -webkit-overflow-scrolling: touch;
+}
+h3,h4,strong {
+  font-weight: normal;
+}
+li {
+  list-style:none;
+}
+th {
+  font-weight: normal;
+}
+input, select {
+  border: 0;
+  outline: none;
+  background-color: #fff;
+}
+img {
+  display:block;
+  border:0;
+  vertical-align:middle;
+}
+a {
+  text-decoration:none;
+  color:#000;
+}
+html,body {height: 100%;overflow: hidden;}
+
+.wrap{height:100%;overflow: hidden;overflow-y: scroll;box-sizing: border-box;background-color: #fbe161;}
+.head{height:794rem/$n; background: url(../img/headBg.jpg) no-repeat;background-size:640rem/$n 480rem/$n;}
+.process{height:794rem/$n;background: url(../img/processBg.png) no-repeat center bottom; background-size:591rem/$n 362rem/$n; }
+.explain{padding:42rem/$n 32rem/$n 56rem/$n;
+  h4{width:120rem/$n;height:24rem/$n;font-size: 22rem/$n;color:#df3c26;background-color: #f2d120;border-radius:6rem/$n;padding-left:20rem/$n;margin:6rem/$n 0;}
+  p{line-height:34rem/$n;font-size: 20rem/$n;color:#df3c26;}
+}
+.linkBtn{height:130rem/$n;text-align: center;
+  a{display: inline-block;height:56rem/$n;width:200rem/$n;text-align: center;line-height:56rem/$n;font-size: 24rem/$n;color:#fff0a1;background-color: #dc290e;border-radius:6rem/$n;}
+}
+.dottedLine{width:100%;border:0;border-bottom: 2px dotted #fff;}
+.redPackage{height:376rem/$n;background: url(../img/sendRedPackage.png) no-repeat center bottom; background-size:592rem/$n 336rem/$n;}
+.linear{background: -moz-linear-gradient(top, #fbe161 0%, #ffd138 100%);
+  background: -webkit-linear-gradient(top, #fbe161 0%, #ffd138 100%);
+  background: -o-linear-gradient(top, #fbe161 0%, #ffd138 100%);
+  background: -ms-linear-gradient(top, #fbe161 0%, #ffd138 100%);
+  background: linear-gradient(top, #fbe161 0%, #ffd138 100%);
+}
+.foot{height:180rem/$n;background: url(../img/footBg.jpg) no-repeat center bottom; background-size:640rem/$n 180rem/$n;}

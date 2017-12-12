@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>充值</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.min.css" />
+    <script src="../../js/sea.js"></script>
+    <script src="../../js/flexible.js"></script>
+</head>
+<body>
+<div class="recharge">
+	<header><a href="../myAccount.html"></a><span>充值</span><a class="rechargeRecord" href="rechargeRecord.html">充值记录</a></header>
+	<div class="wrap">
+		<div class="bankBar">
+			<div class="alignLeft setWidth bankBg"></div>
+	        <div class="alignLeft">
+	        	<p class="bankName"></p>
+			    <p class="account"></p>
+	        </div>
+		</div>
+		<div class="aRows rechargeAmount">
+			<p class="alignLeft">充值金额</p>
+			<div class="alignRight rechargeMoney"><input type="text" placeholder="请输入充值金额" />元</div>
+		</div>
+		<div class="aRows payment">
+			<p class="alignLeft">实际到账</p>
+			<div class="alignLeft marginLeft reallyMoney">0.00元</div>
+		</div>
+		<div class="aRows telInfo">
+			<p class="alignLeft">短信验证码</p>
+			<div class="alignLeft">
+				<input name="sortMessage" type="text" placeholder="短信验证码" />
+				<span class="reSend">60秒后重新发送</span>
+				<span class="reAbtain">点击获取</span>
+			</div>
+		</div>
+		<div class="info">
+			<p class="msg"><span></span>所有资金均通过第三方银行进行资金存管和资金流转。</p>
+			<p class="msg"><span></span>充值手续费：每笔0.12%（暂由平台垫付）</p>
+			<p class="msg"><span></span>充值金额：大于100元即可。若大额资金充值不成功，可能是由于超过了银行规定的单笔/单日充值限额。</p>
+			<p class="msg"><span></span>到账时间：实时到账。</p>
+			<p class="msg"><span></span>如果您的充值金额超过银行卡限额，请通过电脑登录左右逢园官网 <em>https://www.zuoyoufy.com</em> 进行网银充值。</p>
+			<p class="msg"><span></span>如果充值金额没有及时到账，可通过拨打客服热线 400-861-5058（工作时间9:00-17:30）寻求帮助。</p>
+		</div>
+	</div>
+	<footer class="bottomBtn"><span>确认充值</span></footer>
+</div>
+<script>
+seajs.use("./../../js/recharge.js");
+</script>
+</body>
+</html>

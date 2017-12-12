@@ -1,0 +1,150 @@
+@charset "utf-8";
+#loginPage .cont{
+    padding: 0;
+}
+.advBox {
+    padding-left: 20px;
+    padding-top: 50px;
+}
+.loginBox {
+    padding-top: 80px;
+}
+#loginForm {
+    width: 286px;
+    padding: 26px;
+    border: 1px solid #e1e0e0;
+}
+
+#loginForm p {
+    padding: 10px 0;
+}
+#loginForm .firstP{
+    padding-top: 0;
+}
+#loginForm .firstP a{
+    color: #289cff;
+}
+#loginForm .firstP .regSpan {
+    margin-top: 5px;
+}
+#loginForm .firstP span:first-child {
+    font-size: 18px;
+}
+#loginForm input[type="text"],
+#loginForm input[type="password"],
+#loginForm .loginBtn{
+    width: 254px;
+    height: 12px;
+    padding: 14px;
+    border: 1px solid #e1e0e0;
+}
+#loginForm .remAcc ,
+.remAcc a{
+    color: #ababab;
+}
+.remAcc a.findPass:hover {
+    color: #289cff;
+    text-decoration: underline;
+} 
+#loginForm .remAcc input {
+    display: none;
+}
+#loginForm .remAcc span {
+    cursor: pointer;
+}
+#loginForm .remAcc span i{
+    width: 11px;
+    height: 11px;
+    border: 1px solid #ccc;
+    margin-right: 4px;
+    margin-top: 2px;
+}
+#loginForm .remAcc span i.checked {
+    background: url("../img/rem_acc.png") no-repeat center;
+}
+#loginForm .tipBox {
+    height: 28px;
+}
+#loginForm .tip {
+    display: none;
+    padding: 0;
+    padding-left: 32px;
+    line-height: 28px;
+    border-radius: 5px;
+    border: 1px solid #ff5c3c;
+    color: #ff5c3c;
+    background: url("../img/login_tip.png") no-repeat 12px #ffe7e3;
+}
+#loginForm .captchaBox {
+    display: none;
+    line-height: 30px;
+}
+#loginForm .captchaBox input{
+    padding: 8px;
+    width: 86px;
+    height: 14px;
+    margin: 0 8px;
+}
+#loginForm .captchaBox img {
+    width: 92px;
+    height: 30px;
+    border: 1px solid #e1e0e0;
+}
+#loginForm .captchaBox a {
+    padding-top: 8px;
+    background: url("../img/refresh.png") no-repeat center top;
+}
+#loginForm .loginBtn {
+    display: inline-block;
+    background-color: #ff6f0a;
+    color: #fff;
+    padding: 0;
+    width: 282px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#loginForm .loginBtn:hover {
+    background-color: #eb6100;
+}
+.infoPhoto {
+    padding-top: 108px;
+    width: 552px;
+    margin: 0 auto;
+    text-align: center;
+}
+.infoPhoto a {
+    display: inline-block;
+    background: url(../img/icon.png) no-repeat;
+    width: 110px;
+    height: 110px;
+    margin: 0 14px;
+}
+.infoPhoto a:hover {
+    background: url(../img/activeIcon.png) no-repeat;
+}
+.infoPhoto .o,
+.infoPhoto .o:hover {
+    background-position: left top;
+}
+.infoPhoto .t,
+.infoPhoto .t:hover {
+    background-position: left -110px;
+}
+
+.infoPhoto .th,
+.infoPhoto .th:hover {
+    background-position: left -220px;
+}
+.infoPhoto .f,
+.infoPhoto .f:hover {
+    background-position: left -330px;
+}
+.loginBottom {
+    text-align: center;
+    font-size: 14px;
+    padding: 48px 0 54px 0;
+}

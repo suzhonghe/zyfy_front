@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>实名认证</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.min.css" />
+    <script src="../../js/sea.js"></script>
+    <script src="../../js/flexible.js"></script>
+</head>
+<body>
+<div class="identity">
+    <div class="three">
+	    <header><a href="setUp.html"></a><span>实名认证与绑卡</span></header>
+	    <div class="wrap auth">
+			<div class="enterText top">
+				<span class="alignLeft name">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+				<div class="alignRight setWidth realName"><input type="text" placeholder="请输入姓名" /></div>
+			</div>
+			<div class="aLine"></div>
+			<div class="enterText">
+				<span class="alignLeft">身份证号</span>
+				<div class="alignRight setWidth peopleID"><input type="text" placeholder="请输入身份证号" /></div>
+			</div>
+			<div class="aLine"></div>
+			<div class="bank enterText">
+				<span class="alignLeft">选择银行</span>
+				<div class="alignRight setWidth">
+					<span id="currentBank" class="selectedBank choosed" forSort=""></span>
+					<i></i>
+				</div>
+				<ul class="bankList">
+				</ul>
+			</div>
+			<div class="aLine"></div>
+			<div class="bankType enterText">
+				<span class="alignLeft">银行卡类型</span>
+				<div class="alignRight setWidth">
+					<span id="currentBankType" class="bankTypeChoose choosed" forSort="1">借记卡</span>
+					<i></i>
+				</div>
+				<ul class="bankTypeList">
+					<li code="1">借记卡</li>
+					<li code="2">信用卡</li>
+				</ul>
+			</div>
+			<div class="aLine"></div>
+	        <div class="cardNum enterText">
+	        	<span class="alignLeft">银行卡号</span>
+	        	<div class="alignRight setWidth">
+	        		<input name="cardNum" type="text" placeholder="请输入银行卡号"/>
+	        	</div>
+	        </div>
+	        <div class="aLine"></div>
+	        <div class="reserveNum enterText">
+	        	<span class="alignLeft">预留手机号</span>
+	        	<div class="alignRight setWidth">
+	        		<input type="text" value="" placeholder="请输入预留手机号" name="reserveNum"/>
+	        	</div>
+	        </div>
+			<div class="aLine"></div>
+			<p class="msg">
+				<img src="../../../img/yhcg.jpg" width="100%" alt="银行存管">
+				<span>左右逢园平台不碰触用户资金，所有资金流转均在厦门国际银行内完成。
+</span>
+			</p>
+			<footer class="bottomBtn"><span>确定</span></footer>
+		</div>
+		<div class="wrap makesureInfo">
+	    	<p class="username enterText">
+				<span>姓名</span>
+				<span class="msg">1111111111</span>
+			</p>
+			<div class="aLine"></div>
+			<p class="idCode enterText">
+				<span>身份证号</span>
+				<span class="msg">2222222222</span>
+			</p>
+			<div class="aLine"></div>
+			<p class="bank enterText">
+				<span>开户银行</span>
+				<span class="msg">3333333333</span>
+			</p>
+			<div class="aLine"></div>
+			<p class="bankType enterText">
+				<span>银行卡类型</span>
+				<span class="msg">借记卡</span>
+			</p>
+			<div class="aLine"></div>
+	        <p class="bankCode enterText">
+	        	<span>银行卡号</span>
+	        	<span class="msg">44444444444</span>
+	        </p>
+	        <div class="aLine"></div>
+	        <p class="mobile enterText">
+	        	<span>预留手机号</span>
+	        	<span class="msg">5555555555</span>
+	        </p>
+	        <div class="aLine"></div>
+			<p class="enterText">
+	        	<span>短信验证码</span>
+	        	<input type="text" value="" placeholder="请输入短信验证码" name="shortMessageCode"/>
+	        </p>
+	        <div class="aLine"></div>
+	        <p class="bottomBtn">
+	        	<span>确认</span>
+	        </p>
+	    </div>
+	</div>
+</div>
+<script>
+  seajs.use('./../../js/identity.js'); 
+</script>
+</body>
+</html>

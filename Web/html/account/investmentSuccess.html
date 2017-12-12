@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="author" content ="中阳财富"/>
+<meta name="keywords" content="中阳财富,左右逢园,中阳财富官网,互联网金融,P2P网贷,投资理财,P2P理财,互联网理财,网络贷款,小额贷款,100%本息保障,zhongyangcf.com">
+<meta name="description" content="中阳财富 www.zhongyangcf.com - 国内最规范的互联网金融P2P网贷平台之一_为投资理财用户提供安全、诚信、透明的互联网金融务。银行级风险控制水平,大型机构本息担保,第三方资金托管,100%保障资金安全。">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左右逢园</title>
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel="stylesheet" href="../../css/zyfyCommon.css" />
+<link rel="stylesheet" href="../../css/investmentSuccess.css" />
+<script src="../../js/includeHTML.js"></script>
+</head>
+
+<body style="background:#f7f7f7;">
+<script>
+    fnHead(2);
+</script>
+<div class="investmentSuccess">
+	<div class="congratulations">
+		<img src="../../img/regsiterSuccse.png" height="60" width="64" alt="" />
+		<p class="cg"></p>
+		<p class="threeMin">本次投资金额： <strong></strong>元</p>
+	</div>
+	<div class="projectList clear">
+		<div class="title">
+			<span class="titleYin"></span>
+			<a class="titleContent" href="javascript:void(0);"></a>
+		</div>
+		<div class="quanNianLeft">
+			<div class="yearRates">
+				<span>年化收益利率：<em class="rate"></em><em class="minSize">%</em></span>
+				<span class="month">期限：<em></em>个月</span>
+				<span class="schedule">进度：&nbsp;<span class="scheduleBar"><span class="scheduleBarTop"></span></span>&nbsp;<em></em>%</span>
+			</div>
+			<div class="total">
+				<span class="amount">总额：<em></em></span>
+				<span class="method">还款方式：<em></em></span>
+				<span class="shengyu">剩余可投：<em></em></span>
+			</div>
+		</div>
+	</div>
+	<p class="link"><span>页面将在&nbsp;</span><strong></strong><span>&nbsp;秒后自动关闭</span><span class="close">立即关闭</span></p>
+</div>
+<script>
+    fnFoot();
+    fnRigthFloat();
+</script>
+</body>
+<script src="../../js/jquery.min.1.10.2.js"></script>
+<script src="../../js/myJS.js"></script>
+<script src="../../js/zycf.js"></script>
+<script>
+zycfZ.backTop();
+zycfZ.jishuqi();
+zycfZ.userName(zycfZ.linkMyAccount,"../myAccount.html","../zyfyLogin.html");
+</script>
+<script>
+var str = window.location.toString();
+var arr = str.split(/&|=|,/);
+var flag = false;
+for(var i=0;i<arr.length;i++){
+    if(arr[i]=="ret_code" && arr[i+1] == "0000"){
+        $(".congratulations .cg").html("恭喜您，投资成功！");
+        flag = true;
+    }else if(arr[i]=="ret_code" && arr[i+1] != "0000"){
+        $(".congratulations .cg").html("投资失败");
+        $(".congratulations img").attr("src","../../img/failedBig.png");
+        $(".congratulations .threeMin").css("display","none");
+        $(".projectList").css("display","none");
+    }
+};
+for(var i=0;i<arr.length;i++){
+    if(arr[i]=="order_id" && flag){
+        $.ajax({
+            type:"post",
+            data:{"orderId":arr[i+1]},
+            url:"/zycfMarket/queryByOrderId",
+            success:function(str){
+                var method = "";
+                if(str.method=='MonthlyInterest'){
+                    method = '按月付息到期还本';
+                }else if(str.method=='EqualInstallment'){
+                    method = '按月等额本息';
+                }else if(str.method=='EqualPrincipal'){
+                    method = '按月等额本金';
+                }else if(str.method=='BulletRepayment'){
+                    method = '一次性还本付息';
+                }else if(str.method=='EqualInterest'){
+                    method = '月平息';
+                };
+                $(".congratulations .threeMin strong").html(str.investAmount);
+                $(".projectList .title .titleYin").html(str.productName);
+                $(".projectList .title .titleContent").html(str.title);
+                $(".minSize").html(str.rate+"%"+(str.addRate?"+"+str.addRate+"%":""));
+                $(".yearRates .month em").html(str.months);
+                $(".yearRates .schedule em").html(((str.bidAmount)/str.loanAmount*100).toFixed(2));
+                $(".yearRates .schedule .scheduleBarTop").css("width",Math.round((str.bidAmount)/str.loanAmount*100));
+                $(".total .amount em").html(str.loanAmount+"元");
+                $(".total .method em").html(method);
+                $(".total .shengyu em").html(str.loanAmount-str.bidAmount+"元");
+            }
+        })
+    }
+};
+
+var num = 5;
+var myTime = setInterval(function(){
+    num--;
+    $(".link strong").html(num);
+    if(num == 0){
+        clearInterval(myTime);
+        window.open("","_self").close();
+    }
+},1000);
+$(".link .close").click(function(){
+    window.open("","_self").close();
+});
+</script>
+</html>

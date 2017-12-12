@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>绑定银行卡</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.min.css" />
+    <script src="../../js/sea.js"></script>
+    <script src="../../js/flexible.js"></script>
+</head>
+<body>
+<div class="bindBankCard">
+    <header><a href="myBankCard.html"></a><span class="title">绑定银行卡</span></header>
+    <p class="msg">请绑定持卡人本人的银行卡</p>
+    <div class="inputBar">
+    	<div class="aRows">
+			<span class="alignLeft">持卡人</span>
+			<div class="alignRight setWidth realName"></div>
+		</div>
+		<div class="aLine"></div>
+		<div class="aRows chooseBtn">
+			<span class="alignLeft">选择银行</span>
+			<div class="alignRight setWidth bank"><span abbr=""></span></div>
+		</div>
+		<div class="aLine"></div>
+		<div class="aRows">
+			<span class="alignLeft">卡号</span>
+			<div class="alignRight setWidth cardNumber"><input type="text" placeholder="请填写储蓄卡/借记卡卡号" /></div>
+		</div>
+    </div>
+	<p class="agreement">默认签订<a href="../agreement/QuickPayment.html">《快捷支付协议》</a></p>
+	<footer class="bottomBtn"><span>立即绑定</span></footer>
+	<div class="chooseBank">
+		<header><a href="javascript:"></a><span>选择银行卡</span></header>
+		<ul>
+			<!-- <li class="bankBg BOC">afefeafeafaefe</li> -->
+		</ul>
+	</div>
+</div>
+<script>
+seajs.use('./../../js/bindBankCard.js');
+</script>
+</body>
+</html>

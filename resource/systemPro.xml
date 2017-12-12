@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SYSTEM>
+
+	<BANKMANAGER_MCHNT_CD>0002900F0041281</BANKMANAGER_MCHNT_CD>
+	<BANKMANAGER_VER>0.44</BANKMANAGER_VER>
+	<BANKMANAGER_URL>https://jzh-test.fuiou.com/jzh/</BANKMANAGER_URL>
+    <!--或许手机验证码间隔时-->
+    <INTERVALTIME>60</INTERVALTIME>
+   	<!--或许手机验证码次-->
+    <ATTEMPTNUM>4</ATTEMPTNUM>
+
+   <ZYCF_IP>http://114.246.11.158:9000/Account_Manager_Front</ZYCF_IP>
+   
+   <ZYCFAPPVERSION>1</ZYCFAPPVERSION>
+   <ZYCFAPPVERSIONURL>/appVersion/app-release.apk</ZYCFAPPVERSIONURL>
+   
+   <CONTRACT_HOME>F://contracts/</CONTRACT_HOME>
+   <SECOND_CONTRACT_HOME>F://newcontracts/</SECOND_CONTRACT_HOME>
+	
+	<!-- 资金账户管理平台注册的平台编号 -->
+	<ZYCF_PLAT_NO>XIB-ZYFY-A-90079279</ZYCF_PLAT_NO>
+	<!-- 测试环境URL -->
+	<ZYCF_REQ_URL>https://xibtest.xib.com.cn:5443</ZYCF_REQ_URL>
+	<!-- 生产环URL -->
+<!-- 	<ZYCF_REQ_URL>https://fd.xib.com.cn:443</ZYCF_REQ_URL> -->
+<!-- 注册绑卡支付通道 -->
+	<ZYCF_REGISTER_PAY_CODE>051</ZYCF_REGISTER_PAY_CODE>
+	<!-- 开发环境 -->
+<!-- 	<ZYCF_PLAT_NO>XIB-ZYFYL-B-41551130</ZYCF_PLAT_NO> -->
+<!-- 	<ZYCF_REQ_URL>http://58.23.16.244:2080</ZYCF_REQ_URL> -->
+<!-- 	 <ZYCF_PAY_CODE>029</ZYCF_PAY_CODE> -->
+	
+	
+	
+	<!-- 充值支付通道 -->
+	<ZYCF_CHARGE_PAY_CODE>051</ZYCF_CHARGE_PAY_CODE>
+	
+	<!-- 提现支付通道 -->
+	<ZYCF_WITHDRAW_PAY_CODE>011</ZYCF_WITHDRAW_PAY_CODE>
+	<!-- 企业客户开户 -->
+	<ZYCF_COMPANY_OPEN_ACCOUNT>/fd-client/userAction_batchRegistExt3</ZYCF_COMPANY_OPEN_ACCOUNT>
+	<!-- 企业客户绑卡 -->
+	<ZYCF_COMPAY_BINDCARD>/fd-client/bankCardAction_addCard</ZYCF_COMPAY_BINDCARD>
+	<!-- 企业绑卡回调 -->
+	<ZYCF_COMPANY_BINDCARD_CALL>http://114.246.11.158:9000/Account_Manager_Front/front/bmAccount/companyBindCardCall</ZYCF_COMPANY_BINDCARD_CALL>
+	<!-- 短验开户申请 -->
+	<ZYCF_BINK_CARD_APPLY>/fd-client/userAction_getBinkCardCode2</ZYCF_BINK_CARD_APPLY>
+	<!-- 短验开户确认 -->
+	<ZYCF_BINK_CARD_AFFIRM>/fd-client/userAction_addUser2</ZYCF_BINK_CARD_AFFIRM>
+	<!-- 网关充值 -->
+	<ZYCF_GATEWAY_RECHARGE>/fd-client/fundAction_gatewayRechargeRequest</ZYCF_GATEWAY_RECHARGE>
+	<!-- 网关充值同步返回路径 -->
+	<ZYCF_GATEWAY_RECHARGE_RETURN_URL>http://114.246.11.158:9000/Account_Manager_Front/html/umpreturnMsg/umpReturnMsg.html</ZYCF_GATEWAY_RECHARGE_RETURN_URL>
+	<!-- 充值回调路径 -->
+	<ZYCF_RECHARGE_NOTIFY_URL>http://114.246.11.158:9000/Account_Manager_Front/front/fund/callAccountRecharge</ZYCF_RECHARGE_NOTIFY_URL>
+	<!-- 短信验证码申请路径 -->
+	<ZYCF_SENDMEGCODE_APPLY>/fd-client/smsAction_sendMsgCode</ZYCF_SENDMEGCODE_APPLY>
+	<!-- 快捷充值路径 -->
+	<ZYCF_QUICK_CHARGE>/fd-client/fundAction_directQuickCharge</ZYCF_QUICK_CHARGE>
+	<!-- 批量投资路径 -->
+	<ZYCF_BATCH_INVEST>/fd-client/buyAction_batchExt</ZYCF_BATCH_INVEST>
+	<!-- 个人用户提现路径 -->
+	<ZYCF_WITHDRAW_URL>/fd-client/fundAction_withdraw</ZYCF_WITHDRAW_URL>
+	<!-- 提现回调通知路径 -->
+	<ZYCF_WITHDRAW_NOTIFY_URL>http://114.246.11.158:9000/Account_Manager_Front/front/fund/callWithdraw</ZYCF_WITHDRAW_NOTIFY_URL>
+	<!--借款人还款路径  -->
+	<ZYCF_BATCH_BORROWER_REPAY>/fd-client/repayAction_batchExt</ZYCF_BATCH_BORROWER_REPAY>
+	<!--委托还款路径  -->
+	<ZYCF_COMPENSATE_REPAY>/fd-client/repayAction_compensate</ZYCF_COMPENSATE_REPAY>
+	<!-- 解绑银行卡路径 -->
+	<ZYCF_RELIEVE_CARD>/fd-client/bankCardAction_batchUpdateCardExt</ZYCF_RELIEVE_CARD>
+	<!-- pc开通二类账户路径 -->
+	<ZYCF_PC_OPEN_II_ACCOUNT>https://test.xib.com.cn:25443/brosperbank/personeb/openAccountAction.action</ZYCF_PC_OPEN_II_ACCOUNT>
+	<!-- PC开通II类账户成功后回调地址 -->
+	<ZYCF_PC_OPEN_II_ACCOUNT_SUCCESSFUL>http://114.246.11.158:9000/html/openIIAccount.html</ZYCF_PC_OPEN_II_ACCOUNT_SUCCESSFUL>
+	
+	<!-- app开通ii类账户路径 -->
+	<ZYCF_APP_OPEN_II_ACCOUNT>https://testmobile.xib.com.cn/mbank/T_acct_sign_up.html</ZYCF_APP_OPEN_II_ACCOUNT>
+	<!-- app开通II类账户成功后回调地址 -->
+	<ZYCF_APP_OPEN_II_ACCOUNT_SUCCESSFUL>http://114.246.11.158:9000/wap/html/openIIAccount.html</ZYCF_APP_OPEN_II_ACCOUNT_SUCCESSFUL>
+	
+<!-- 	<PRIVATE_KEY_PATH>zycf.pfx</PRIVATE_KEY_PATH> -->
+<!-- 	<PUBLIC_KEY_PATH>zycf.crt</PUBLIC_KEY_PATH> -->
+<!-- 	<PRIVATE_KEY_PASSWD>zycf963852741</PRIVATE_KEY_PASSWD> -->
+	<PRIVATE_KEY_PATH>ifsp.pfx</PRIVATE_KEY_PATH>
+	<PUBLIC_KEY_PATH>libifsp.cer</PUBLIC_KEY_PATH>
+	<PRIVATE_KEY_PASSWD>2078888</PRIVATE_KEY_PASSWD>
+</SYSTEM>

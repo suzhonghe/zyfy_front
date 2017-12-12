@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>登录</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <script src="../js/sea.js"></script>
+    <script src="../js/flexible.js"></script>
+</head>
+<body>
+<div class="login">
+	<header><a href="../index.html"></a><span>登录</span></header>
+	<div class="wrap">
+		<div class="user"><input type="text" placeholder="请输入手机号/用户名" /></div>
+		<div class="aLineBar">
+			<div class="aLine"></div>
+		</div>
+		<div class="password"><input type="password" placeholder="请输入密码" /></div>
+		<footer class="bottomBtn"><span>登录</span></footer>
+		<div class="linkBar">
+		    <a class="alignLeft" href="./register.html">免费注册</a>
+		    <a class="alignRight" href="forgotPassword.html">忘记密码</a>
+		</div>
+	</div>
+</div>
+<script>
+    seajs.use('./../js/login.js');
+</script>
+</body>
+</html>

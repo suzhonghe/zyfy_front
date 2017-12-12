@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.ProductDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.Product" id="rm">
+		<id column="ID" property="id"/>
+		<result column="NAME" property="name"/>
+		<result column="DESCRIPTION" property="description"/>
+		<result column="RATE" property="rate"/>
+		<result column="REPAYMETHOD" property="repayMethod"/>
+		<result column="DAYS" property="days"/>
+		<result column="MONTHS" property="months"/>
+		<result column="YEARS" property="years"/>
+		<result column="MININVESTAMOUNT" property="minInvestAmount"/>
+		<result column="MAXINVESTAMOUNT" property="maxInvestAmount"/>
+		<result column="GROUPID" property="groupId"/>
+		<result column="STATUS" property="status"/>
+	</resultMap>
+	<sql id="sqlfield">
+		select ID,NAME,DESCRIPTION,RATE,REPAYMETHOD,DAYS,MONTHS,YEARS,MININVESTAMOUNT,MAXINVESTAMOUNT,GROUPID,STATUS
+		from TB_PRODUCT where 1=1
+	</sql>
+	<select id="selectAllProduct" resultMap="rm">
+		<include refid="sqlfield"/> and STATUS=0
+		order by TIMECREATE ASC
+	</select>
+	<select id="selectProductById" parameterType="String" resultMap="rm">
+		<include refid="sqlfield"/>
+		<if test="id !=null and id !=''">and ID=#{id}</if>
+	</select>
+</mapper>

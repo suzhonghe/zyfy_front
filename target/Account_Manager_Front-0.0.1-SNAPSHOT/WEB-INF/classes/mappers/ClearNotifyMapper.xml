@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.ClearNotifyDao'>
+	<resultMap type="com.zhongyang.java.bankmanager.entity.ClearNotify" id="rm">
+		<id column="ID" property="id"/>
+		<result column="PLAT_NO" property="plat_no"/>
+		<result column="CLEAR_DATE" property="clearDate"/>
+		<result column="LIQUIDATION_FLAG" property="liquidation_flag"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select ID,PLAT_NO,CLEAR_DATE,LIQUIDATION_FLAG from TB_BM_CLEAR_NOTIFY where 1=1
+	</sql>
+	
+	<insert id="insertClearNotify" parameterType="com.zhongyang.java.bankmanager.entity.ClearNotify">
+		insert into TB_BM_CLEAR_NOTIFY (ID,PLAT_NO,CLEAR_DATE,LIQUIDATION_FLAG)
+		values(#{id},#{plat_no},#{clearDate},#{liquidation_flag})
+	</insert>
+	
+	<select id="selectOneByParams" parameterType="com.zhongyang.java.bankmanager.entity.ClearNotify" resultMap="rm">
+		<include refid="sqlfile"/>
+			and ID=#{id}
+	</select>
+	
+	<select id="selectMoreByParams" parameterType="com.zhongyang.java.bankmanager.entity.ClearNotify" resultMap="rm">
+		<include refid="sqlfile"/>
+		order by CLEAR_DATE DESC
+	</select>
+</mapper>

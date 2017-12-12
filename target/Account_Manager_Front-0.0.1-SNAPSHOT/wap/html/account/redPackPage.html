@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>我的福利</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.min.css" />
+    <script src="../../js/sea.js"></script>
+    <script src="../../js/flexible.js"></script>
+</head>
+<body>
+<div class="testBidMobile redPackPage">
+    <header><a href="../myAccount.html"></a>
+        <ul class="aRows">
+            <li class="active alignLeft">体验金</li>
+            <li class="alignRight">红包</li>
+        </ul>
+        <a class="ruleDis" href="ruleDescription.html">规则</a>
+    </header>
+    <div class="wrap">
+        <ul class="beUsed aRows">
+            <li class="active alignLeft">未使用</li>
+            <li class="alignRight">已使用</li>
+        </ul>
+        <ul class="listWrap testBidWrap">
+            <li>
+                <ul class="noUsed"></ul>
+            </li>
+            <li>
+                <ul class="wasUsed"></ul>
+            </li>
+        </ul>
+        <ul class="listWrap redPacketsWrap">
+            <li>
+                <ul class="noUsed"></ul>
+            </li>
+            <li>
+                <ul class="wasUsed"></ul>
+            </li>
+        </ul>
+    </div>
+    <footer class="bottomBtn"><span>投资</span></footer>
+</div>
+<script>
+seajs.use("./../../js/redPackPage.js");
+</script>
+</body>
+</html>

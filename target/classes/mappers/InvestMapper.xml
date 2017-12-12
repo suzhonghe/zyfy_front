@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.InvestDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.Invest" id="rm">
+		<id column="ID" property="id" />
+		<result column="ORDERID" property="orderId" />
+		<result column="AMOUNT" property="amount" />
+		<result column="LOANID" property="loanId" />
+		<result column="REPAYMETHOD" property="repayMethod" />
+		<result column="STATUS" property="status" />
+		<result column="SUBMITTIME" property="submitTime" />
+		<result column="USERID" property="userId" />
+		<result column="DAYS" property="days" />
+		<result column="MONTHS" property="months" />
+		<result column="YEARS" property="years" />
+		<result column="U_NAME" property="userName" />
+		<result column="TITLE" property="loanTitle"/>
+	</resultMap>
+	<sql id="sqlfield">
+		ORDERID,AMOUNT,LOANID,REPAYMETHOD,STATUS,SUBMITTIME,USERID,DAYS,MONTHS,YEARS
+	</sql>
+	
+	<insert id="insertInvset" parameterType="com.zhongyang.java.zyfyfront.pojo.Invest">
+		insert into TB_INVEST(ID,ORDERID,AMOUNT,LOANID,REPAYMETHOD,STATUS,SUBMITTIME,
+		USERID,MONTHS)values(#{id},#{orderId},#{amount},#{loanId},#{repayMethod},#{status},
+		#{submitTime},#{userId},#{months})
+	</insert>
+	
+	<update id="updateInvestByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.Invest">
+		update TB_INVEST 
+			<set>
+				<if test="status !=null">STATUS=#{status},</if>
+			</set>
+			where 1=1
+				<if test="orderId !=null">and ORDERID=#{orderId}</if>
+				<if test="id !=null">and ID=#{id}</if>
+	</update>
+	
+	<select id="selectInvestByparams" parameterType="com.zhongyang.java.zyfyfront.pojo.Invest" resultMap="rm">
+		select ID 
+			<include refid="sqlfield"/>
+		from TB_INVEST where 1=1
+			<if test="orderId !=null">and ORDERID=#{orderId}</if>
+			<if test="userId !=null">and USERID=#{userId}</if>
+			<if test="id !=null">and ID=#{id}</if>
+			<if test="status !=null">and STATUS=#{status}</if>
+	</select>
+
+	<select id="selectInvestByPage" parameterType="com.zhongyang.java.system.page.Page" resultMap="rm">
+		select u.U_NAME,i.AMOUNT,i.SUBMITTIME,l.TITLE
+		from TB_USER u 
+		left join TB_INVEST i on u.ID=i.USERID
+		left join TB_LOAN l on i.LOANID=l.ID
+		where 1=1
+			and i.STATUS in('AUDITING','SETTLED','CLEARED')
+		<if test="params.containsKey('userId') and params.userId !=''">
+			and u.REFERRAL_ID=#{params.userId}
+		</if>
+		<if test="params.containsKey('loanId') and params.loanId !=''">
+			and i.LOANID=#{params.loanId}
+		</if>
+		<if test="startTime !=null">
+			and i.SUBMITTIME &gt;=#{startTime}
+		</if>
+		<if test="endTime !=null">
+			and i.SUBMITTIME &lt;=#{endTime}
+		</if>
+		order by i.SUBMITTIME DESC
+	</select>
+
+</mapper>

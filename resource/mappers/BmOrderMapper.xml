@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.zhongyang.java.dao.BmOrderDao'>
+ 	<resultMap type="com.zhongyang.java.bankmanager.entity.BmOrder" id="rm">
+ 		<id column="ID" property="id"/>
+ 		<result column="ORDER_ID" property="orderId"/>
+ 		<result column="PARTNER_TRANS_DATE" property="orderDate"/>
+ 		<result column="PARTNER_TRANS_TIME" property="orderTime"/>
+ 		<result column="ORDER_TYPE" property="orderType"/>
+ 		<result column="ORDER_STATUS" property="orderStatus"/>
+ 		<result column="RECODE" property="record"/>
+ 		<result column="REMSG" property="remsg"/>
+ 		<result column="USER_ID" property="userId"/>
+ 		<result column="REMARK" property="remark"/>
+ 	</resultMap>
+ 	
+ 	<sql id="sqlfile">
+ 		ID，ORDER_ID,PARTNER_TRANS_DATE,PARTNER_TRANS_TIME,ORDER_TYPE,ORDER_STATUS,RECODE,
+ 		REMSG,USER_ID,REMARK
+ 	</sql>
+ 	
+ 	<insert id="insertBmOrder" parameterType="com.zhongyang.java.bankmanager.entity.BmOrder">
+ 		insert into TB_BM_ORDER(ID,ORDER_ID,PARTNER_TRANS_DATE,PARTNER_TRANS_TIME,ORDER_TYPE,
+  		ORDER_STATUS,RECODE,REMSG,USER_ID,REMARK)values(#{id},#{orderId},#{orderDate},#{orderTime},
+  		#{orderType},#{orderStatus},#{record},#{remsg},#{userId},#{remark})
+ 	</insert>
+ 	
+ 	<update id="updateBmOrderByParams" parameterType="com.zhongyang.java.bankmanager.entity.BmOrder">
+ 		update TB_BM_ORDER
+ 			<set>
+ 				<if test="orderStatus !=null">ORDER_STATUS=#{orderStatus},</if>
+ 				<if test="record !=null">RECODE=#{record},</if>
+ 				<if test="remsg !=null">REMSG=#{remsg},</if>
+ 				<if test="remark !=null">REMARK=#{remark},</if>
+ 			</set>
+ 			<if test="id!=null or orderId!=null">
+ 				where 1=1
+	 			<if test="id!=null">and ID=#{id}</if>
+	 			<if test="orderId!=null">and ORDER_ID=#{orderId}</if>
+ 			</if>
+ 			
+ 	</update>
+ 	
+ 	<select id="selectBmOrderByParams" parameterType="com.zhongyang.java.bankmanager.entity.BmOrder" resultMap="rm">
+ 		select
+ 			<include refid="sqlfile"/>
+ 		from TB_BM_ORDER where 1=1
+ 			<if test="id!=null and id!=''">and ID=#{id}</if>
+ 			<if test="orderId!=null"> and ORDER_ID=#{orderId}</if>
+ 	</select>
+</mapper>

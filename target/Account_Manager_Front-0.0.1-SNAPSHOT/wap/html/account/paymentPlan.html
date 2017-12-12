@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>回款计划</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"  />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no,email=no"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="#ff5d16" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.min.css" />
+    <script src="../../js/sea.js"></script>
+    <script src="../../js/flexible.js"></script>
+</head>
+<body>
+<div class="paymentPlan">
+	<header><a href="../myAccount.html"></a><span>回款计划</span></header>
+	<div class="wrap">
+		<div class="litNav">
+			<div class="alignLeft"><span class="active">未回</span></div>
+			<div class="alignRight"><span class="">已回</span></div>
+		</div>
+		<p class="record">共 <span></span> 笔记录</p>
+		<div class="hasBeen"></div>
+		<div class="hasNo"></div>
+	</div>
+</div>
+<script>
+seajs.use("./../../js/paymentPlan.js");
+</script>
+</body>
+</html>

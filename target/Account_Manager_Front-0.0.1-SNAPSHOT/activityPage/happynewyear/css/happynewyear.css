@@ -1,0 +1,77 @@
+body, ul, p, h3, li {
+  margin: 0;
+  padding: 0; 
+  font-family: 'Microsoft YaHei';
+}
+
+li {
+  list-style: none; }
+
+.activityPage img {
+  display: block;
+  border: 0;
+  vertical-align: top; }
+
+.clear {
+  zoom: 1; }
+
+.clear:after {
+  display: block;
+  content: '';
+  clear: both; }
+
+.left {
+  display: inline;
+  float: left; }
+
+.right {
+  display: inline;
+  float: right; }
+
+p {
+  color: #252525;
+  font-family: 'Microsoft YaHei';
+}
+body{min-width: 1460px; background-color: #e20112; }
+
+.headBar img{width: 100%;}
+.content{ padding-bottom: 326px; background: url(../img/pc-foot.jpg) no-repeat center bottom; position: relative;}
+.hasBorder{ width: 1002px; margin: 0 auto; background: url(../img/border.jpg) repeat; min-height: 2000px;}
+
+.introduce{width: 920px; height: 552px; margin: 0 auto; background: url(../img/pc-avtivityTime.jpg) no-repeat center 0; }
+.hasBorder p{font-size: 22px; color:#4c4c4c; line-height: 40px; width: 588px; margin: 0 auto; text-indent: 2em;}
+.hasBorder span{ color:#ff0700;}
+.hasBorder .textAline{ text-align: right;}
+.content .title{padding: 42px 0 38px; height: 98px; line-height: 98px; text-align: center; font-size: 40px; color:#403323; font-weight: bold; text-indent: 0;}
+.content .title span{color:#ff0700;}
+
+.projectBar{width: 920px; height: 1454px; margin: 0 auto; background: url(../img/pc-projectBg.jpg) no-repeat center 0;}
+.projectBar .title{ padding-top: 106px;}
+.projectBar img{display: block; margin: 0 auto;}
+
+.method{width: 948px; height: 572px; padding: 44px 0 0 54px; margin: 0 auto; background: url(../img/pc-method.jpg) no-repeat center 0;}
+.method .textBar{ padding-top: 174px;}
+.method .clearBoth{ width: 620px; }
+.method .clearBoth p{font-size: 22px; color:#fff; line-height: 32px;}
+.method .erweima{ width: 300px; }
+.method .clearBoth .setWidth{width:86px; color:#333;}
+.method .clearBoth .rightFont{width:530px;}
+.method .erweima img{ display: block; width: 206px; height: 206px;}
+.method .erweima p{ line-height: 40px; color:#ffffbb; padding-left: 14px;}
+
+.activity{ margin: 58px auto 0; width: 872px; height: 394px; background: url(../img/pc-msg.jpg) no-repeat center 0; padding: 0 50px 0 80px; }
+.activity .title{ padding-bottom: 0;}
+.activity p{ line-height: 40px; font-size: 22px; color: #4c4c4c;}
+
+.congratulateBar{ margin: 98px auto 0; width: 1058px; height: 634px; background: url(../img/pc-contr.png) no-repeat center 0; padding-top: 350px; }
+.congratulateBar .congratulate{ padding: 17px 30px; width: 452px; height: 216px; margin: 0 auto; background-color: #d50407; box-shadow: 0 0 20px rgba(0,0,0,0.7);}
+.congratulateBar .congratulate p{ font-size: 28px; color:#fff; line-height: 54px;}
+.congratulateBar .ji{ width: 528px; height: 80px; margin: 82px auto 0;}
+.congratulateBar .ji p{ font-size: 24px; color:#412b09; line-height: 40px; text-align: center;}
+
+.congratulateMsg{ width: 1472px; height: 496px; position: absolute; left: 50%; margin-left: -736px; color:#1a1a1a; padding-top: 24px; font-size: 28px; text-align: center; letter-spacing: 30px;  background: url(../img/pc-title.png) no-repeat center 0; text-indent: 22px; line-height: 60px; }
+.wsry{  top: -104px;}
+.cygj{  top: 496px;}
+.xxsc{  top: 1910px;}
+.djdl{  top: 2570px;}
+.xckl{  top: 3082px;}

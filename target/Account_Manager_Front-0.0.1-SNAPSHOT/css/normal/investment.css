@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* guild */
+.guild{width:1000px;margin:0 auto;}
+.guild li{width:250px;height:264px;float:left;cursor:pointer;}
+.guild div{margin:19px 70px 16px;background:url(../img/icon.png) no-repeat;height:110px;width:110px;}
+.guild .guildImg2{background-position:0 -110px;}
+.guild .guildImg3{background-position:0 -220px;}
+.guild .guildImg4{background-position:0 -330px;}
+.guild .title{height:42px;line-height:42px;color:#5b5b5b;font-size:26px;text-align:center;}
+.guild .content{height:30px;line-height:30px;color:#5b5b5b;font-size:16px;text-align:center;}
+.guild li:hover div{background:url(../img/activeIcon.png) no-repeat;}
+.guild li:hover .guildImg2{background-position:0 -110px;}
+.guild li:hover .guildImg3{background-position:0 -220px;}
+.guild li:hover .guildImg4{background-position:0 -330px;}
+.guild li:hover .title{color:#ff7514;}
+/* guild end */
+
+/* notice end */
+.noticeBar{width:100%;height:50px;border-top:1px solid #e1e0e0;border-bottom:1px solid #e1e0e0;}
+.notice{width:944px;margin:0 auto;background:url(../img/noticeBg.png) no-repeat 26px 12px;height:30px;padding: 10px 0 10px 56px;}
+.noticeContent{width:820px;text-overflow:ellipsis;float:left;position: relative;height:30px;overflow: hidden;}
+.noticeContent ul{position: absolute;left:0;top:0px;width:820px;}
+.noticeContent li{line-height:30px;width:820px;float:left;}
+.noticeContent li a{line-height:30px;font-size:14px;color:#ff7514;float:left;height:30px;}
+.noticeContent li span{line-height:30px;padding:0 32px;color:#c0c0c0;float:right;}
+.noticeContent a:hover{color:#000;}
+.noticeRight{float:right;padding-right:30px;width:90px;}
+.noticeRight a{line-height:30px;color:#ff7514;padding:0 12px;background:url(../img/moreBg.png) no-repeat 0 center;display:inline-block;font-size:14px;}
+.noticeRight a:hover{color:#000;}
+/* notice end */
+
+/* recommendList */
+.projectListWrap p{font-size: 24px;text-align: center;color:#333;margin:20px 0;display: none;}
+.recommend{width:1000px;margin:0 auto;padding-top:13px;border-bottom: 1px solid #e1e0e0;}
+.recommend h3{font-size:24px;color:#5a5a5a;line-height:52px;float:left;height:52px;}
+.recommend ul{float:left;padding-left:24px;}
+.recommend li{float:left;}
+.recommend li a{line-height:52px;padding:0 13px;color:#5a5a5a;font-size:18px;}
+.recommend li a:hover,.recommend .on a{color:#eb6100;}
+.recommend p{float:right;}
+.recommend p a{color:#999999;font-size:14px;padding:0 16px;line-height:52px;}
+.recommend p a:hover{color:#000;}
+.projectList{width:1000px;margin:0 auto;background-color: #fff;}
+.projectList .addRate{background:#fff url(../img/addRateBg.png) no-repeat center center;}
+.projectList li{border:1px solid #e1e0e0;padding:9px 30px 15px 30px;border-top:none;background-color: #fff;position: relative;}
+.projectList .timimg{position: absolute;left:836px;top:20px;height:30px;line-height: 30px;color:#999;font-size:16px;}
+.projectList li:hover{background-color: #f6f6f6;}
+.projectList .quanNian{background:url(../img/tiyanBg.png) no-repeat right top;}
+.projectList .title{height:52px;line-height:52px;font-size: 16px;}
+.projectList .titleYin{width:65px;height:22px;color:#fff;display:inline-block;text-align: center;background-color:#ff6f0a;line-height:22px;}
+.projectList .titleContent{padding:0 15px;color:#5a5a5a;line-height:52px;}
+.projectList .titleLittle{height:20px;padding:0 8px;color:#ff6f0a;display:inline-block;text-align: center;border:1px solid #ff6f0a;border-radius:5px;line-height:20px;}
+.projectList .quanNianLeft{float:left;}
+.yearRates span,.total span{display:inline-block;width:262px;color:#999;font-size:14px;line-height:30px;}
+.yearRates em{color:#eb6100;font-size:24px;line-height:30px;}
+.yearRates .minSize{color:#eb6100;font-size:14px;line-height:30px;}
+.projectList .quanNianRight{float:right;}
+.projectList .scheduleBar{width:94px;height:8px;background:#d9d9d9;overflow:hidden;display:inline-block;position:relative;}
+.projectList .scheduleBarTop{width:0px;height:8px;background:#289cff;overflow:hidden;display:inline-block;position:absolute;}
+.total em{color:#999;line-height:30px;}
+.projectList .quanNianRight{width:148px;height:40px;line-height:40px;text-align:center;font-size:16px;color:#fff;background-color:#ff6f0a;border-radius:5px;cursor:pointer;}
+.projectList .bgColor{background-color: #c9c9c9;}
+.projectList .banNian{background:none;}
+.projectList a:hover{color:#eb6100;}
+/* recommendList end */
+/* investment 页 */
+.investment{padding:0;margin-top: 34px;height:30px;border-bottom:1px solid #eb6100;position: relative;}
+.investment h3{font-size:18px;color:#333;line-height:20px;float:left;height:20px;padding:0 14px;border-left:6px solid #eb6100;margin:5px 0;display: inline;}
+.investment ul{position:absolute;left:106px;top:-1px;width:auto;z-index:9;height:30px;padding:0;}
+.investment li{float:left;}
+.investment li a{line-height:30px;padding:0 13px;color:#333;font-size:16px;display: block;}
+.investment .attorned{position: absolute;right:310px;top:8px;border-left:2px solid #eb6100;height:16px;line-height: 16px;padding:0 13px;color:#333;font-size:16px;}
+.investment li:hover,.investment .on{color:#eb6100;border:1px solid #eb6100;border-bottom:1px solid #fff;}
+.investment p{font-size: 14px;color:#959595;padding:5px 0;position: absolute;right:10px;top:0;z-index:9;}
+
+.more{height:60px;line-height: 60px;text-align: center;font-size: 16px;color:#5a5a5a;cursor:pointer;width:1000px;margin:0 auto;}
+.more:hover{background: #e1e1e1;color:#333;}
+
+.paging{width:1000px;margin:0 auto;height:30px;text-align: right;background: #fff;display: none;padding:24px 0;}
+.paging a{margin:0 5px;padding:0 12px;display: inline-block;height:28px;line-height:28px;border:1px solid #e1e0e0;border-radius:3px;font-size: 14px;color:#5a5a5a;}
+.paging .on{background: #289cff;border:1px solid #289cff;color:#fff;}
+.paging span{margin:0 5px;padding:0 12px;display: inline-block;height:28px;line-height:28px;font-size: 14px;color:#5a5a5a;}
+.paging .prev{padding:0 10px 0 16px;background: url(../img/pagingBg.png) no-repeat 5px 0;}
+.paging .next{padding:0 16px 0 10px;background: url(../img/pagingBg.png) no-repeat 60px -30px;}
+

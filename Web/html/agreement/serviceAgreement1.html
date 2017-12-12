@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>服务协议 - 左右逢园</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+<meta name="360-site-verification" content="b75e490b1744ba22c3200ec9f7cae7a7" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="baidu-site-verification" content="U0KIAkdGPs" />
+<meta name="keywords" content="左右逢园官网,互联网金融,P2P网贷,投资理财,P2P理财,互联网理财,高收益投资项目,网络贷款,小额贷款,本息保障,www.zuoyoufy.com">
+<meta name="description" content="左右逢园（www.zuoyoufy.com）是中阳财富投资控股有限公司全力打造的一家业务规范、管理严格的P2P网贷平台。作为互联网金融服务平台，左右逢园为每一位投资者严格筛选优质项目，使每一个项目都安全透明、合法合规，确保用户的投资安全。">
+<script>
+    var CC = {};
+    CC.host = "https://www.zuoyoufy.com/";
+    CC.client = {
+        code: "ZYCF",
+        name: "左右逢园",
+        shortName: "左右逢园"
+    };
+    CC.constant = {"DAILY_LOAN_REQUEST_LIMIT":50,"MIN_LOAN_RATE":0,"MAX_LOAN_RATE":5000,"MIN_LOAN_AMOUNT":1,"LOAN_AMOUNT_INCREMENT":1,"MAX_LOAN_AMOUNT":100000000,"MIN_LOAN_DURATION":1,"MAX_LOAN_DURATION":48,"MAX_LOAN_YEAR":4,"MIN_LOAN_TIME_OUT":0,"MAX_LOAN_TIME_OUT":2160,"MIN_INVEST_AMOUNT":1,"INVEST_AMOUNT_INCREMENT":1,"MAX_INVEST_AMOUNT":100000000,"POSTLOAN_DAYS":40,"MAX_LOAN_DESCRIPTION":4000};
+    //FundRecordType
+    CC.FundRecordType = {
+    
+            "INVEST": "投标",
+    
+            "WITHDRAW": "取现",
+    
+            "DEPOSIT": "充值",
+    
+            "LOAN": "放款",
+    
+            "LOAN_REPAY": "贷款还款",
+    
+            "DISBURSE": "垫付还款",
+    
+            "INVEST_REPAY": "投资还款",
+    
+            "CREDIT_ASSIGN": "债权转让",
+    
+            "TRANSFER": "转账扣款",
+    
+            "OFFLINE_DEPOSIT": "线下充值",
+    
+            "LOAN_INTEREST": "贷款还息",
+    
+            "INVEST_INTEREST": "投资结息",
+    
+            "DISBURSE_INTEREST": "垫付结息",
+    
+            "REWARD_REGISTER": "注册奖励",
+    
+            "REWARD_REFERRAL": "推荐奖励",
+    
+            "REWARD_INVEST": "投标奖励",
+    
+            "REWARD_DEPOSIT": "充值奖励",
+    
+            "COUPON_CASH": "现金券",
+    
+            "COUPON_INTEREST": "加息券",
+    
+            "COUPON_PRINCIPAL": "增值券",
+    
+            "COUPON_REBATE": "返现券",
+    
+            "INTEREST_BEARING_INCOME": "余额生息收益",
+    
+            "FEE_WITHDRAW": "提现手续费",
+    
+            "FEE_AUTHENTICATE": "身份验证手续费",
+    
+            "FEE_INVEST_INTEREST": "投资管理费",
+    
+            "FEE_LOAN_SERVICE": "借款服务费",
+    
+            "FEE_LOAN_MANAGE": "借款管理费",
+    
+            "FEE_LOAN_INTEREST": "还款管理费",
+    
+            "FEE_LOAN_VISIT": "实地考察费",
+    
+            "FEE_LOAN_GUARANTEE": "担保费",
+    
+            "FEE_LOAN_RISK": "风险管理费",
+    
+            "FEE_LOAN_OVERDUE": "逾期管理费",
+    
+            "FEE_LOAN_PENALTY": "逾期罚息(给商户)",
+    
+            "FEE_LOAN_PENALTY_INVEST": "逾期罚息(给投资人)",
+    
+            "FEE_DEPOSIT": "充值手续费",
+    
+            "FEE_ADVANCE_REPAY": "提前还款违约金(给商户)",
+    
+            "FEE_ADVANCE_REPAY_INVEST": "提前还款违约金(给投资人)",
+    
+            "FEE_CREDIT_ASSIGN": "债权转让手续费",
+    
+            "FEE_BIND_CARD": "用户绑卡手续费",
+    
+            "FEE_WEALTHPRODUCT_MANAGE": "产品管理费",
+    
+            "FEE_WEALTHPRODUCT_CUSTODY": "产品托管费",
+    
+            "FSS": "生利宝",
+    
+            "INVESTMENT_FUND": "基金",
+    
+            "INSURANCE_PREMIUM": "保费",
+    
+            "INSURANCE_APPEND_PREMIUM": "保费追加",
+    
+            "INSURANCE_REFUND": "退保",
+    
+            "STOCK_PAY": "配资付款",
+    
+            "STOCK_PROFIT": "提取盈利",
+    
+            "STOCK_AMOUNT_ADD": "追加保证金",
+    
+            "STOCK_EXTENSION": "配资续期",
+    
+            "STOCk_SETTLE": "配资结算",
+    
+            "WEALTH_PRODUCT_SUBSCRIBE_PAY": "认购付款"
+    
+    };
+    //FundRecordOperation
+    CC.FundRecordOperation = {
+    
+        "FREEZE": "冻结",
+    
+        "RELEASE": "解冻",
+    
+        "IN": "资金转入",
+    
+        "OUT": "资金转出"
+    
+    };
+    //FundRecordStatus
+    CC.FundRecordStatus = {
+    
+        "INITIALIZED": "初始",
+    
+        "PROCESSING": "处理中",
+    
+        "AUDITING": "审核中",
+    
+        "PAY_PENDING": "支付结果待查",
+    
+        "CUT_PENDING": "代扣结果待查",
+    
+        "SUCCESSFUL": "成功",
+    
+        "FAILED": "失败",
+    
+        "REJECTED": "拒绝",
+    
+        "CANCELED": "取消"
+    
+    };
+    
+</script>
+    
+        <link rel="stylesheet" href="dist/main-css/5f89a8607aa9af6a951891632d951f11.css" />
+        <link rel="stylesheet" href="dist/main-css/21f62865c01142f0b168174f3aa54e73.css" />
+        <link rel="stylesheet" href="dist/main-css/8cbb67982d94c82411360db6574292a0.css" />
+    
+
+        <style>
+            body {
+                margin: 0;
+                padding: 10px 10%;
+                font-size: 14px;
+                font-family: 'Microsoft Yahei', Helvetica, Arial, sans-serif;
+            }
+            .wrap {
+                border-top: 1px #ddd solid;
+            }
+            p {
+                line-height: 20px;
+            }
+            @media (max-width: 500px) {
+                body {
+                    padding: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>左右逢园网络借贷服务协议</h1>
+        <div class="wrap">
+            <p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family: 微软雅黑;color:#07519A">左右逢园网络借贷服务协议</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family: 微软雅黑;color:#07519A">一、协议生效</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">1、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">仔细阅读：网络用户注册成为左右逢园网络借贷平台用户，或通过第三方用户信息使用左右逢园借贷平台之前请务必仔细阅读以下条款。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">2、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">协议生效：本服务协议服务于左右逢园网络借贷平台的用户(以下简称“平台用户”)，本服务协议在平台用户注册或第一次登录时向平台用户明示，如平台用户选择不同意本服务协议，则无法完成注册；如平台用户选择同意本服务协议，则本服务协议在平台用户和左右逢园平台之间生效，具有法律效力。网络用户在此书面确认其具有完全民事行为能力，其注册和使用左右逢园网络借贷平台的行为，表明该平台用户在同意接受左右逢园平台的服务时应受以下条款的约束。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family: 微软雅黑;color:#07519A">二、左右逢园平台的义务</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">1、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">认证服务：左右逢园网络借贷平台为用户提供认证服务(包括但不限于身份识别、银行账户信息识别等)，建立用户信用数据库。左右逢园网络借贷平台应尽最大的努力，采取各种其认为必要手段对用户的身份进行识别。但是，基于目前信用认证的手段有限，左右逢园网络借贷平台对平台用户的身份的准确性和绝对真实性不做任何保证。
+</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">2、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">资料收集：左右逢园平台可通过各种渠道收集平台用户的额外资料，并使用平台用户的资料以确保交易安全，解决争议或改进服务。
+</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">3、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">隐私保护：受制于中国法律的相关规定，左右逢园平台对于平台用户的相关信息将尽最大的技术和管理予以保护。平台用户同意：当平台用户作为借款人借款逾期未还时，左右逢园平台及作为放款人的其他平台用户可以采取发布借款人相关信息的方式追索债权，并不受隐私保护的限制；在平台用户违反其他左右逢园网络借贷平台使用规定时，左右逢园平台有权根据自己的单独判断或与该笔交易有关的其他平台用户的请求披露平台用户的个人资料，并不受隐私保护的限制。
+</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family: 微软雅黑;color:#07519A">三、平台用户义务</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">1、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">适当使用：平台用户承诺合法使用左右逢园平台提供的服务及网站内容。禁止在左右逢园网络借贷平台上从事任何可能违反中国现行的法律、法规、规章和政府规范性文件的行为或者任何未经授权使用左右逢园网络借贷平台的行为。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">2、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">知识产权保护：左右逢园平台上的全部内容的版权均属于左右逢园平台所有，其内容包括但不限于文本、数据、文章、设计、源代码、软件、图片、照片及其他全部内容 (以下称网站内容)。网站内容受中华人民共和国著作权法及各国际版权公约的保护。未经左右逢园平台的书面许可，平台用户承诺不以任何方式、形式复制、模仿、传播、出版、展示网站内容，包括但不限于电子的、机械的、复印的、录音、录像等形式。未经左右逢园平台书面许可，平台用户亦不得将左右逢园平台包含的资料等任何内容转载到其他任何网站和服务器。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">3、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">借贷责任：平台用户使用左右逢园平台所进行的所有的借贷活动，均需遵守国家的法律法规。只要借贷关系建立，平台用户应完全遵守另行签署的借贷协议，依法放贷，按时还款。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">4、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">账户自用：平台用户注册成功后，不得将平台用户名转让给第三方或授权给任何第三方使用。平台用户对其账户在左右逢园借贷平台上的一切操作承担相应的法律后果。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">5、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">安全使用：左右逢园借贷平台提供密码验证、交易密码作为主要的安全防护手段。平台用户须保证其用户名和密码的安全性，否则由此造成的损失由平台用户自行承担。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">6、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">真实资料：平台用户有义务在注册的时候提供真实个人信息与资料，并保证诸如电子邮件地址、联系电话、地址等内容的有效性和真实性。如平台用户因交易和其他平台用户产生诉讼的，左右逢园平台将根据隐私规则披露相关用户的资料。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">7、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">真实交易：平台用户不得创建虚假交易进行欺诈他人借款或进行信用炒作，如违反本义务，情节严重的，将通过法律途径，对其左右逢园借贷平台账户及账户内资金进行冻结处理；构成犯罪的，将依法移交公安机关处理。</span>
+</p>
+
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family: 微软雅黑;color:#07519A">四、其他条款</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">1、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">协议范围：本服务协议内容包括本文条款及左右逢园借贷平台已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的一部分，与协议正文具有同等法律效力。本协议是由平台用户与左右逢园平台共同签订的，适用于平台用户在左右逢园平台的全部活动。在左右逢园借贷平台的某些部分或页面中可能存在除本协议以外的单独的附加服务条款，当这些条款存在冲突时，在该些部分和页面中优先适用附加条款。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">2、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">不时修改：左右逢园平台有权根据需要不时地制定、修改本协议或各类规剥，如本协议及规则有任何变更，左右逢园平台将在网站上发布公告，经修订的协议、规则一经公布后，立即自动生效。平台用户应不时地注意本协议和附属规则地变更，若平台用户不同意相关变更，左右逢园平台有权不经任何告知终止本服务协议或者限制平台用户进入左右逢园平台的全部或者部分板块且不承担任何法律责任。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">3、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">第三方信息：左右逢园借贷平台可能涉及由第三方所有、控制或者运营的其他网站(以下称第三方网站)。左右逢园平台不保证也没有义务保证第三方网站上信息的真实性和有效性。平台用户确认按照第三方网站的服务协议使用第三方网站，而不是按照本协议。第三方网站不是左右逢园平台推荐或介绍的，第三方网站的内窖、产品、广告和其他任何信息均由平台用户自行判断并承担风险，左右逢园平台不负法律责任。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">4、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">责任限制：除非左右逢园平台在本协议中明示承担责任，否则左右逢园平台对平台用户使用左右逢园平台服务而产生的任何形式的直接或间接损失均不承担法律责任，因为左右逢园平台或其涉及的第三方网站的设备、系统存在缺陷或者因为计算机病毒造成的损失，左右逢园平台均不负责赔偿。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">5、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">网站自查：左右逢园平台有权不时地根据法律、法规、政府要求披露、修改或者删除必要的、合适的信息，以便更好的运营左右逢园借贷平台并保护其他合法平台用户。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">6、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">补偿：就任何第三方提出的，由于平台用户违反任何法律法规，本协议或纳入本协议的条款和规则而产生或引起的任何性质的索赔、要求、诉讼、损失和损害，平台用户同意就此对左右逢园平台或左右逢园平台的关联公司、董事高管、代理人或雇员进行补偿并使其免受损害。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">7、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">适用法律和管辖：因左右逢园平台提供服务所产生的争议均适用中华人民共和国法律，并由左右逢园平台住所地的人民法院管辖。</span>
+</p>
+<p style=";margin-bottom:0;text-indent:26px;line-height:40px;background:white">
+    <span style="font-size:14px;font-family:微软雅黑;color:#333333">8、</span><span style="font-size:14px;font-family:微软雅黑;color:#333333">条款独立性：若本协议的部分条款被认定为无效或者无法实施时，本协议中的其他条款仍然有效。</span>
+</p>
+<p>
+    <br/>
+</p>
+
+        </div>
+    </body>
+</html>

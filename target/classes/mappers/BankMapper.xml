@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.BankDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.Bank" id="rm">
+		<id column="BANK_ID" property="bankId"/>
+		<result column="BANK_CODE" property="bankCode"/>
+		<result column="BANK_NAME" property="bankName"/>
+		<result column="BANK_SHORT_NAME" property="bankShortName"/>
+		<result column="EN_NAME" property="enName"/>
+		<result column="LIMIT_AMOUNT" property="limitAmount"/>
+		<result column="LIMIT_TOTAL_AMOUNT" property="limitTotalAmount"/>
+	</resultMap>
+	<sql id="sqlfile">
+		BANK_ID,BANK_CODE,BANK_NAME,BANK_SHORT_NAME,EN_NAME,LIMIT_AMOUNT,LIMIT_TOTAL_AMOUNT
+	</sql>
+	
+	<select id="selectAllBank" resultMap="rm">
+		select 
+			<include refid="sqlfile"/>
+		from TB_BANK where 1=1 order by BANK_CODE ASC
+	</select>
+	
+	<select id="selestByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.Bank" resultMap="rm">
+		select
+			<include refid="sqlfile"/>
+		from TB_BANK where 1=1 
+		<if test="bankCode !=null">and BANK_CODE=#{bankCode}</if>
+	</select>
+</mapper>

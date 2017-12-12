@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.zhongyang.java.dao.UserDao'>
+	<resultMap id="rm" type="com.zhongyang.java.zyfyfront.pojo.User">
+		<id column="ID" property="id" />
+		<result column="ENABLED" property="enabled" />
+		<result column="LASTLOGINDATE" property="lastLoginDate" />
+		<result column="LASTMODIFYDATE" property="lastModifyDate" />
+		<result column="LOGINNAME" property="loginName" />
+		<result column="MOBILE" property="mobile" />
+		<result column="PASSPHRASE" property="passphrase" />
+		<result column="REGISTERDATE" property="registerDate" />
+		<result column="SALT" property="salt" />
+		<result column="REFERRAL_ID" property="referralId" />
+		<result column="USERTYPE" property="userType" />
+		<result column="CUSTTYPE" property="custType" />
+		<result column="ALLOWTIME" property="allowTime" />
+		<result column="U_NAME" property="userName" />
+		<result column="ID_CODE" property="idCode" />
+		<result column="BIRTHDATE" property="birthDate" />
+	</resultMap>
+	<sql id="sqlfile">
+		ID,ENABLED,LASTLOGINDATE,LASTMODIFYDATE,LOGINNAME,MOBILE,
+		PASSPHRASE,REGISTERDATE,SALT,REFERRAL_ID,USERTYPE,ALLOWTIME,U_NAME,ID_CODE,CUSTTYPE,USERTYPE
+	</sql>
+	<insert id="insertUser" parameterType="com.zhongyang.java.zyfyfront.pojo.User">
+		insert into
+		TB_USER(ID,ENABLED,LASTLOGINDATE,LASTMODIFYDATE,LOGINNAME,MOBILE,
+		PASSPHRASE,REGISTERDATE,SALT,REFERRAL_ID,USERTYPE,ALLOWTIME,U_NAME,ID_CODE,CUSTTYPE)
+		values(#{id},#{enabled},#{lastLoginDate},#{lastModifyDate},#{loginName},
+		#{mobile},#{passphrase},#{registerDate},#{salt},#{referralId},#{userType},
+		#{allowTime},#{userName},#{idCode},#{custType})
+	</insert>
+
+	<select id="selectUserByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.User"
+		resultMap="rm">
+		select
+		<include refid="sqlfile" />
+		from TB_USER where 1=1
+		<if test="id!=null">and ID=#{id}</if>
+		<if test="loginName!=null">and LOGINNAME=#{loginName}</if>
+		<if test="mobile!=null">and MOBILE=#{mobile}</if>
+		<if test="idCode!=null">and ID_CODE=#{idCode}</if>
+	</select>
+
+	<update id="updateUserByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.User">
+		update TB_USER
+		<set>
+			<if test="enabled !=null">ENABLED=#{enabled},</if>
+			<if test="lastLoginDate !=null">LASTLOGINDATE=#{lastLoginDate},</if>
+			<if test="lastModifyDate !=null">LASTMODIFYDATE=#{lastModifyDate},</if>
+			<if test="loginName !=null">LOGINNAME=#{loginName},</if>
+			<if test="mobile !=null">MOBILE=#{mobile},</if>
+			<if test="passphrase !=null">PASSPHRASE=#{passphrase},</if>
+			<if test="salt !=null">SALT=#{salt},</if>
+			<if test="userType !=null and userType !=0">USERTYPE=#{userType},</if>
+			<if test="custType !=null and custType !=0">CUSTTYPE=#{custType},</if>
+			<if test="allowTime !=null">ALLOWTIME=#{allowTime},</if>
+			<if test="userName !=null">U_NAME=#{userName},</if>
+			<if test="idCode !=null">ID_CODE=#{idCode},</if>
+			<if test="birthDate !=null">BIRTHDATE=#{birthDate},</if>
+		</set>
+		where ID=#{id}
+	</update>
+
+	<select id="selectUserByPage" parameterType="com.zhongyang.java.system.page.Page" resultMap="rm">
+		select U_NAME,MOBILE,LASTLOGINDATE,REGISTERDATE from TB_USER
+		where 1=1
+		<if test="params.containsKey('userId') and params.userId !=''">
+			and REFERRAL_ID=#{params.userId}
+		</if>
+		order by REGISTERDATE DESC
+	</select>
+</mapper>

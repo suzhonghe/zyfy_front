@@ -1,0 +1,32 @@
+@charset "utf-8";
+$n:750/16;
+body,ul,p,h3,li{margin:0;padding:0;}
+li {list-style:none;}
+img {display:block;border:0;vertical-align:top;}
+a{text-decoration: none;}
+p{color:#000;font-family: 'Microsoft YaHei';} 
+.clear {zoom:1;}
+.clear:after {display: block;content: '';clear: both;}
+.left {display: inline;float: left;}
+.right {display: inline;float: right;}
+
+.header{width:100%;height:394rem/$n;background: url(../img/mobile-head.jpg) no-repeat center 0; background-size: 100% 394rem/$n;}
+ .headText{font-size: 24rem/$n;color:#9c3c27;line-height: 48rem/$n;text-indent: 2em; padding:0 64rem/$n;}
+.Tpaddingtop{padding-top:40rem/$n;}
+.Tpaddingbottom{padding-bottom: 100rem/$n;}
+.newRigester{height:186rem/$n;background: url(../img/mobile-newRigester.png) no-repeat center 0; background-size: 568rem/$n 86rem/$n;}
+.follow{height:122rem/$n; background: url(../img/mobile-follow.jpg) no-repeat center 0; background-size: 618rem/$n 122rem/$n;}
+.testInfo{width: 720rem/$n; padding:20rem/$n 0; margin:0 auto;}
+.testInfo li{margin:0 15rem/$n;width: 150rem/$n; height: 130rem/$n;background-color: #e95853; border-radius: 5rem/$n;}
+.testInfo p{font-size: 24rem/$n; color: #fff; line-height: 30rem/$n; text-align: center; padding-top: 20rem/$n;}
+.last p{padding-top: 10rem/$n;}
+.activity{padding: 66rem/$n 70rem/$n 98rem/$n;}
+.activity h3{line-height: 50rem/$n; font-size: 28rem/$n; color:#df3c26; }
+.activity p{ font-size: 24rem/$n; color:#df3c26; line-height: 42rem/$n;}
+.registerBtn{text-align: center;}
+.registerBtn a{display: inline-block; width: 232rem/$n; height: 64rem/$n; color:#fff; line-height: 64rem/$n; text-align: center; font-size: 32rem/$n; background-color: #e95853; border-radius: 5rem/$n;}
+.call400{padding-top: 132rem/$n; height:78rem/$n; background: url(../img/400.png) no-repeat center bottom; background-size: 324rem/$n 78rem/$n;}
+.companyInfo{padding: 20rem/$n 0 16rem/$n;}
+.companyInfo p{font-size: 20rem/$n; color: #595757; line-height: 34rem/$n; text-align: center;}
+.footer{height:112rem/$n; background: url(../img/mobile-foot.png) no-repeat center 0; background-size: 100% 112rem/$n;}  
+

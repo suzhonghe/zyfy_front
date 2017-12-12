@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.LoanRepaymentDao'>
+	<resultMap type="com.zhongyang.java.zyfyfront.pojo.LoanRepayment"
+		id="rm">
+		<id column="ID" property="id" />
+		<result column="CURRENTPERIOD" property="currentPeriod" />
+		<result column="REPAYAMOUNT" property="repayAmount" />
+		<result column="REPAYDATE" property="repayDate" />
+		<result column="STATUS" property="status" />
+		<result column="SOURCE_ID" property="sourceId" />
+		<result column="AMOUNTINTEREST" property="amountInterest" />
+		<result column="AMOUNTOUTSTANDING" property="amountOutStanding" />
+		<result column="AMOUNTPRINCIPAL" property="amountPrincipal" />
+		<result column="DUEDATE" property="dueDate" />
+		<result column="LOAN_ID" property="loanId" />
+		<result column="TITLE" property="loanTitle"/>
+		<result column="ISREPAY" property="isRepay"/>
+		<result column="REPAYSOURCE" property="repaySource"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select r.ID,r.CURRENTPERIOD,r.REPAYAMOUNT,r.REPAYDATE,r.STATUS,r.SOURCE_ID,
+		r.AMOUNTINTEREST,r.AMOUNTOUTSTANDING,r.AMOUNTPRINCIPAL,r.DUEDATE,r.LOAN_ID,r.ISREPAY,
+		l.TITLE,r.REPAYSOURCE
+		from TB_LOAN_REPAYMENT r left join TB_LOAN l on r.LOAN_ID=l.ID
+		where 1=1
+	</sql>
+	<select id="selectLoanRepaymentsByPage" parameterType="com.zhongyang.java.system.page.Page" resultMap="rm">
+		<include refid="sqlfile"/>
+		<if test="params.containsKey('status') and params.status =='UN'">
+			and r.ISREPAY=0
+		</if>
+		<if test="params.containsKey('status') and params.status =='RP'">
+			and r.ISREPAY=1
+		</if>
+		<if test="params.containsKey('userId') and params.userId !=''">
+			and l.LOANUSERID=#{params.userId}
+		</if>
+		<if test="params.containsKey('compentSateUserId') and params.compentSateUserId !=''">
+			and l.COMENTSATEUSERID=#{params.compentSateUserId}
+		</if>
+		<if test="strStart !=null and strStart !=''">
+			and r.DUEDATE &gt;=STR_TO_DATE(#{strStart},'%Y-%m-%d')
+		</if>
+		<if test="strEnd !=null and strEnd !=''">
+			and r.DUEDATE &lt;=STR_TO_DATE(#{strEnd},'%Y-%m-%d')
+		</if>
+		order by r.DUEDATE ASC
+	</select>
+
+	<sql id="sqlLoanRepayment">
+		ID,CURRENTPERIOD,REPAYAMOUNT,REPAYDATE,STATUS,SOURCE_ID,
+		AMOUNTINTEREST,AMOUNTOUTSTANDING,AMOUNTPRINCIPAL,DUEDATE,LOAN_ID,ISREPAY,REPAYSOURCE
+	</sql>
+	<select id="selectLoanRepaymentByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.LoanRepayment" resultMap="rm">
+		select
+			<include refid="sqlLoanRepayment"/>
+		from TB_LOAN_REPAYMENT
+		where 1=1
+		<if test="id !=null and id !=''">and ID=#{id}</if>
+		<if test="loanId !=null and loanId !=null">and LOAN_ID=#{loanId}</if>
+		<if test="currentPeriod !=null and currentPeriod !=''">and CURRENTPERIOD=#{currentPeriod}</if>
+		<if test="isRepay !=null">and ISREPAY=#{isRepay}</if>
+	</select>
+
+	<update id="updateLoanRepaymentByParams" parameterType="com.zhongyang.java.zyfyfront.pojo.LoanRepayment">
+		update TB_LOAN_REPAYMENT
+			<set>
+				<if test="isRepay !=null">ISREPAY=#{isRepay},</if>
+				<if test="sourceId !=null">SOURCE_ID=#{sourceId},</if>
+				<if test="repaySource !=null">REPAYSOURCE=#{repaySource},</if>
+			</set>
+		where 1=1
+		<if test="id !=null and id !=''">and ID=#{id}</if>
+		<if test="loanId !=null and loanId !=null">and LOAN_ID=#{loanId}</if>
+		<if test="currentPeriod !=null and currentPeriod !=''">and CURRENTPERIOD=#{currentPeriod}</if>
+	</update>
+</mapper>

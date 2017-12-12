@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.zhongyang.java.dao.BmAccountDao'>
+ 	<resultMap type="com.zhongyang.java.bankmanager.entity.BmAccount" id="rm">
+ 		<id column="ID" property="id"/>
+ 		<result column="PLATCUST" property="platcust"/>
+ 		<result column="USER_NAME" property="userName"/>
+ 		<result column="ID_TYPE" property="idType"/>
+ 		<result column="ID_CODE" property="idCode"/>
+ 		<result column="CARD_NO" property="cardNo"/>
+ 		<result column="CARD_TYPE" property="cardType"/>
+ 		<result column="OPEN_BRANCH" property="openBranch"/>
+ 		<result column="PRE_MOBILE" property="preMobile"/>
+ 		<result column="REMARK" property="remark"/>
+ 		<result column="USER_ID" property="userId"/>
+ 		<result column="CREATETIME" property="createTime"/>
+ 		<result column="OPEN_II_ACCOUNT" property="open_ii_account"/>
+ 	</resultMap>
+ 	
+ 	<sql id="sqlfile">
+ 		ID,PLATCUST,USER_NAME,ID_TYPE,ID_CODE,CARD_NO,CARD_TYPE,OPEN_BRANCH,PRE_MOBILE,
+ 		REMARK,CREATETIME,USER_ID,OPEN_II_ACCOUNT
+ 	</sql>
+ 	
+ 	<insert id="insertBmAccount" parameterType="com.zhongyang.java.bankmanager.entity.BmAccount">
+ 		insert into TB_BM_ACCOUNT(ID,USER_ID,CREATETIME,OPEN_II_ACCOUNT)values(#{id},#{userId},#{createTime},#{open_ii_account})
+ 	</insert>
+ 	
+ 	<update id="updateBmAccountByParams" parameterType="com.zhongyang.java.bankmanager.entity.BmAccount">
+ 		update TB_BM_ACCOUNT
+ 			<set>
+ 				<if test="platcust !=null">PLATCUST=#{platcust},</if>
+ 				<if test="userName !=null">USER_NAME=#{userName},</if>
+ 				<if test="idType !=null">ID_TYPE=#{idType},</if>
+ 				<if test="idCode !=null">ID_CODE=#{idCode},</if>
+ 				<if test="cardNo !=null">CARD_NO=#{cardNo},</if>
+ 				<if test="cardType !=null">CARD_TYPE=#{cardType},</if>
+ 				<if test="openBranch !=null">OPEN_BRANCH=#{openBranch},</if>
+ 				<if test="preMobile !=null">PRE_MOBILE=#{preMobile},</if>
+ 				<if test="remark !=null">REMARK=#{remark},</if>
+ 				<if test="open_ii_account !=null">OPEN_II_ACCOUNT=#{open_ii_account},</if>
+ 			</set>
+ 			<if test="id !=null or userId !=null">
+ 				where 1=1
+	 			<if test="id !=null">and ID=#{id}</if>
+	 			<if test="userId !=null">and USER_ID=#{userId}</if>
+ 			</if>
+ 	</update>
+ 	
+ 	<select id="selectBmAccountByParams" parameterType="com.zhongyang.java.bankmanager.entity.BmAccount" resultMap="rm">
+ 		select
+ 			<include refid="sqlfile"/>
+ 		from TB_BM_ACCOUNT where 1=1
+ 			<if test="id!=null and id!=''">and ID=#{id}</if>
+ 			<if test="userId!=null and userId!=''">and USER_ID=#{userId}</if>
+ 			<if test="platcust !=null and platcust !=''">and PLATCUST=#{platcust}</if>
+ 	</select>
+ 	
+ 	<update id="relieveCard" parameterType="com.zhongyang.java.bankmanager.entity.BmAccount">
+ 		update TB_BM_ACCOUNT SET
+ 				ID_CODE=NULL,
+ 				CARD_NO=NULL,
+ 				CARD_TYPE=NULL,
+ 				OPEN_BRANCH=NULL,
+ 				PRE_MOBILE=NULL
+ 		
+ 			<if test="id!=null or userId!=null">
+ 				where 1=1
+	 			<if test="id!=null">and ID=#{id}</if>
+	 			<if test="userId!=null">and USER_ID=#{userId}</if>
+ 			</if>
+ 	</update>
+</mapper>

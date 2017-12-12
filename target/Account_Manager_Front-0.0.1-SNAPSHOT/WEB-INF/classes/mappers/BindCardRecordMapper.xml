@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.zhongyang.java.dao.BindCardRecordDao'>
+	<resultMap id="rm" type="com.zhongyang.java.bankmanager.entity.BindCardRecord">
+		<id column="ID" property="id" />
+		<result column="ACCT_NAME" property="acct_name" />
+		<result column="ACCT_NO" property="acct_no" />
+		<result column="CREATETIME" property="createTime" />
+		<result column="USER_ID" property="userId" />
+		<result column="ORG_NO" property="org_no"/>
+		<result column="OPEN_BRANCH" property="open_branch"/>
+		<result column="STATUS" property="status"/>
+		<result column="ORDER_ID" property="orderId"/>
+		<result column="REMARK" property="remark"/>
+		<result column="PREMOBILE" property="preMobile"/>
+		
+	</resultMap>
+	<sql id="sqlfile">
+		ID,ACCT_NAME,ACCT_NO,
+		CREATETIME,USER_ID,ORG_NO,OPEN_BRANCH,STATUS,ORDER_ID,REMARK,PREMOBILE
+	</sql>
+	<insert id="insertBindCardRecord" parameterType="com.zhongyang.java.bankmanager.entity.BindCardRecord">
+		insert into
+		TB_COMPANY_BINDCARD_RECORD(ID,ACCT_NAME,ACCT_NO,
+		CREATETIME,USER_ID,ORG_NO,OPEN_BRANCH,STATUS,ORDER_ID,PREMOBILE,REMARK)
+		values(#{id},#{acct_name},#{acct_no},#{createTime},#{userId},#{org_no},
+		#{open_branch},#{status},#{orderId},#{preMobile},#{remark})
+	</insert>
+
+	<update id="updateBindCardRecord" parameterType="com.zhongyang.java.bankmanager.entity.BindCardRecord">
+		update TB_COMPANY_BINDCARD_RECORD
+		<set>
+			<if test="status !=null">STATUS=#{status},</if>
+			<if test="remark !=null">REMARK=#{remark},</if>
+		</set>
+		where 1=1
+			<if test="id !=null">and ID=#{id}</if>
+			<if test="orderId !=null">and ORDER_ID=#{orderId}</if>
+	</update>
+
+	<select id="selectRecordByParams" parameterType="com.zhongyang.java.bankmanager.entity.BindCardRecord" resultMap="rm">
+		select <include refid="sqlfile"/>
+		from TB_COMPANY_BINDCARD_RECORD
+		where 1=1
+		<if test="id !=null">and ID=#{id}</if>
+		<if test="orderId !=null">and ORDER_ID=#{orderId}</if>
+		<if test="status !=null">and STATUS=#{status}</if>
+	</select>
+</mapper>

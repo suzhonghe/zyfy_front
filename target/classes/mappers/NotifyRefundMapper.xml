@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+<mapper namespace='com.zhongyang.java.dao.NotifyRefundDao'>
+	<resultMap type="com.zhongyang.java.bankmanager.entity.NotifyRefund" id="rm">
+		<id column="ID" property="id"/>
+		<result column="PLAT_NO" property="plat_no"/>
+		<result column="ORDER_NO" property="order_no"/>
+		<result column="PLATCUST" property="platcust"/>
+		<result column="AMT" property="amt"/>
+		<result column="CREATE_TIME" property="createTime"/>
+	</resultMap>
+	<sql id="sqlfile">
+		select ID,PLAT_NO,ORDER_NO,PLATCUST,AMT,CREATE_TIME from TB_BM_NOTIFY_REFUND where 1=1
+	</sql>
+	
+	<insert id="insertNotifyRefund" parameterType="com.zhongyang.java.bankmanager.entity.NotifyRefund">
+		insert into TB_BM_NOTIFY_REFUND (ID,PLAT_NO,ORDER_NO,PLATCUST,AMT,CREATE_TIME)
+		values(#{id},#{plat_no},#{order_no},#{platcust},#{amt},#{createTime})
+	</insert>
+	
+	<select id="selectOneByParams" parameterType="com.zhongyang.java.bankmanager.entity.NotifyRefund" resultMap="rm">
+		<include refid="sqlfile"/>
+			<if test="id !=null">and ID=#{id}</if>
+			<if test="plat_no !=null">and ORDER_NO=#{plat_no}</if>
+	</select>
+	
+	<select id="selectMoreByParams" parameterType="com.zhongyang.java.bankmanager.entity.NotifyRefund" resultMap="rm">
+		<include refid="sqlfile"/>
+	</select>
+</mapper>
